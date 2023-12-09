@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         window.overrideUserInterfaceStyle = .dark
         
-        let vc = LoginVC()
+        let vc = LoginVC.makeViewController()
         let navigationController = UINavigationController(rootViewController: vc)
         window.rootViewController = navigationController
         self.window = window
