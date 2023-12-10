@@ -5,6 +5,7 @@
 //  Created by Keerthi Devipriya(kdp) on 09/12/23.
 //
 
+import LocalAuthentication
 import UIKit
 
 class LoginVC: UIViewController {
@@ -104,11 +105,49 @@ extension LoginVC {
         navigateToHomeVC()
     }
     
+    func addBiometricAuthentication() {
+        let context = LAContext()
+        var error: NSError? = nil
+        
+        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+            let reason = "Please authorize with touchID!"
+            context.evaluatePolicy(
+                .deviceOwnerAuthenticationWithBiometrics,
+                localizedReason: reason
+            ) { [weak self] succs, err in
+                guard let self = self else { return }
+                DispatchQueue.main.async {
+                    guard succs, err == nil else {
+                        self.showAuthfailedAlert()
+                        return
+                    }
+                    self.navigateToHomeVC()
+                }
+            }
+        } else {
+            self.showNoBiometricAvailable()
+        }
+    }
+    
+    func showAuthfailedAlert() {
+        let ac = UIAlertController(title: "Authentication failed", message: "Please try again.", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+        self.present(ac, animated: true)
+    }
+    
+    func showNoBiometricAvailable() {
+        let ac = UIAlertController(
+            title: "Biometry unavailable",
+            message: "Your device is not configured for biometric authentication.",
+            preferredStyle: .alert
+        )
+        ac.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+        self.present(ac, animated: true)
+    }
+    
     @objc func switchValueDidChange(sender:UISwitch!) {
         if(sender.isOn) {
-            print("biometrics enabled----")
-        } else {
-            print("please enter ur biometrics for easy---")
+            self.addBiometricAuthentication()
         }
     }
     
