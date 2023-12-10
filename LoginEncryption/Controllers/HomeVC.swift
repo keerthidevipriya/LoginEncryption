@@ -13,4 +13,9 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .red
     }
+    
+    static func makeViewController() -> HomeVC {
+        let vc = HomeVC()
+        return vc
+    }
 }

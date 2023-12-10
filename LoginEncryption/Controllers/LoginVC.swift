@@ -8,6 +8,11 @@
 import UIKit
 
 class LoginVC: UIViewController {
+    
+    enum Constant {
+        static let margin: CGFloat = 16
+    }
+    
     lazy var baseView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -19,6 +24,13 @@ class LoginVC: UIViewController {
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.font = UIFont.systemFont(ofSize: 14)
         return lbl
+    }()
+    
+    lazy var biometricSwitch: UISwitch = {
+        var s = UISwitch()
+        s.translatesAutoresizingMaskIntoConstraints = false
+        s.addTarget(self, action: #selector(self.switchValueDidChange), for: .valueChanged)
+        return s
     }()
     
     lazy var submitBtn: UIButton = {
@@ -37,6 +49,7 @@ class LoginVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Login"
         configure()
     }
     
@@ -55,6 +68,7 @@ class LoginVC: UIViewController {
     
     func configureView() {
         baseView.addSubview(titleLbl)
+        baseView.addSubview(biometricSwitch)
         baseView.addSubview(submitBtn)
         view.addSubview(baseView)
     }
@@ -70,8 +84,11 @@ class LoginVC: UIViewController {
             titleLbl.centerXAnchor.constraint(equalTo: baseView.centerXAnchor),
             titleLbl.topAnchor.constraint(equalTo: baseView.topAnchor, constant: 408),
             
+            biometricSwitch.centerXAnchor.constraint(equalTo: baseView.centerXAnchor),
+            biometricSwitch.topAnchor.constraint(equalTo: titleLbl.bottomAnchor, constant: Constant.margin),
+            
             submitBtn.centerXAnchor.constraint(equalTo: baseView.centerXAnchor),
-            submitBtn.topAnchor.constraint(equalTo: titleLbl.bottomAnchor, constant: 16)
+            submitBtn.topAnchor.constraint(equalTo: biometricSwitch.bottomAnchor, constant: Constant.margin)
         ])
     }
     
@@ -83,6 +100,24 @@ class LoginVC: UIViewController {
 
 extension LoginVC {
     @objc func submitTapped() {
+        handleNotification()
+        navigateToHomeVC()
+    }
+    
+    @objc func switchValueDidChange(sender:UISwitch!) {
+        if(sender.isOn) {
+            print("biometrics enabled----")
+        } else {
+            print("please enter ur biometrics for easy---")
+        }
+    }
+    
+    func navigateToHomeVC() {
+        let vc = HomeVC.makeViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func handleNotification() {
         let notification = UILocalNotification()
         notification.alertAction = "Hello"
         notification.alertBody = "Welcome to the app!"
