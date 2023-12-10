@@ -9,11 +9,15 @@ import LocalAuthentication
 import UIKit
 
 class LoginVC: UIViewController {
+    var defaults = UserDefaults.standard
     
     enum Constant {
         static let margin: CGFloat = 16
     }
-    
+    enum Keys: String {
+        case password
+        case biometric
+    }
     lazy var baseView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -25,6 +29,24 @@ class LoginVC: UIViewController {
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.font = UIFont.systemFont(ofSize: 14)
         return lbl
+    }()
+    
+    lazy var pswdTextField: UITextField = {
+        let textField = UITextField()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.placeholder = "Enter Password"
+        textField.keyboardType = UIKeyboardType.default
+        textField.returnKeyType = UIReturnKeyType.done
+        textField.autocorrectionType = UITextAutocorrectionType.no
+        textField.font = UIFont.systemFont(ofSize: 13)
+        textField.borderStyle = UITextField.BorderStyle.roundedRect
+        textField.clearButtonMode = UITextField.ViewMode.whileEditing
+        textField.backgroundColor = .lightGray
+        textField.textColor = .gray
+        textField.isSecureTextEntry = true
+        textField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
+        textField.addTarget(self, action: #selector(saveDetails), for: .editingChanged)
+        return textField
     }()
     
     lazy var biometricSwitch: UISwitch = {
@@ -40,6 +62,17 @@ class LoginVC: UIViewController {
         btn.setTitle("Submit", for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 12)
         btn.addTarget(self, action: #selector(submitTapped), for: .touchUpInside)
+        btn.layer.cornerRadius = 8
+        return btn
+    }()
+    
+    lazy var clearBtn: UIButton = {
+        var btn = UIButton()
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.setTitle("Clear", for: .normal)
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        btn.addTarget(self, action: #selector(clearTapped), for: .touchUpInside)
+        btn.layer.cornerRadius = 8
         return btn
     }()
     
@@ -51,6 +84,8 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Login"
+        loadData()
+        pswdTextField.addTarget(self, action: #selector(saveDetails), for: .editingChanged)
         configure()
     }
     
@@ -62,15 +97,18 @@ class LoginVC: UIViewController {
     }
     
     func setUpData() {
-        titleLbl.text = "Enter password"
+        titleLbl.text = "Welcome"
         titleLbl.textColor = .black
         submitBtn.backgroundColor = .blue
+        clearBtn.backgroundColor = .blue
     }
     
     func configureView() {
         baseView.addSubview(titleLbl)
-        baseView.addSubview(biometricSwitch)
+        baseView.addSubview(pswdTextField)
         baseView.addSubview(submitBtn)
+        baseView.addSubview(biometricSwitch)
+        baseView.addSubview(clearBtn)
         view.addSubview(baseView)
     }
     
@@ -80,16 +118,22 @@ class LoginVC: UIViewController {
             baseView.rightAnchor.constraint(equalTo: self.view.rightAnchor),
             baseView.topAnchor.constraint(equalTo: self.view.topAnchor),
             baseView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
-            baseView.heightAnchor.constraint(equalToConstant: 270),
+            baseView.heightAnchor.constraint(equalToConstant: 370),
             
             titleLbl.centerXAnchor.constraint(equalTo: baseView.centerXAnchor),
             titleLbl.topAnchor.constraint(equalTo: baseView.topAnchor, constant: 408),
             
+            pswdTextField.centerXAnchor.constraint(equalTo: baseView.centerXAnchor),
+            pswdTextField.topAnchor.constraint(equalTo: titleLbl.bottomAnchor, constant: Constant.margin),
+            
             submitBtn.centerXAnchor.constraint(equalTo: baseView.centerXAnchor),
-            submitBtn.topAnchor.constraint(equalTo: titleLbl.bottomAnchor, constant: Constant.margin),
+            submitBtn.topAnchor.constraint(equalTo: pswdTextField.bottomAnchor, constant: Constant.margin),
             
             biometricSwitch.centerXAnchor.constraint(equalTo: baseView.centerXAnchor),
-            biometricSwitch.topAnchor.constraint(equalTo: submitBtn.bottomAnchor, constant: Constant.margin)
+            biometricSwitch.topAnchor.constraint(equalTo: submitBtn.bottomAnchor, constant: Constant.margin),
+            
+            clearBtn.centerXAnchor.constraint(equalTo: baseView.centerXAnchor),
+            clearBtn.topAnchor.constraint(equalTo: biometricSwitch.bottomAnchor, constant: Constant.margin),
         ])
     }
     
@@ -102,7 +146,38 @@ class LoginVC: UIViewController {
 extension LoginVC {
     @objc func submitTapped() {
         handleNotification()
-        navigateToHomeVC()
+        if !(pswdTextField.text?.isEmpty ?? true) {
+            self.saveDetails()
+            self.navigateToHomeVC()
+        } else {
+            self.showPasswordEmptyAlert()
+        }
+    }
+    
+    @objc func clearTapped() {
+        pswdTextField.text = String()
+        biometricSwitch.isOn = false
+        UserDefaults.standard.removeObject(forKey: Keys.password.rawValue)
+        UserDefaults.standard.removeObject(forKey: Keys.biometric.rawValue)
+    }
+    
+    func loadData() {
+        pswdTextField.text = defaults.string(forKey: Keys.password.rawValue)
+        biometricSwitch.isOn = defaults.bool(forKey: Keys.biometric.rawValue)
+        /*if biometricSwitch.isOn {
+            self.navigateToHomeVC()
+        }*/
+    }
+    
+    @objc func saveDetails() {
+        defaults.set(pswdTextField.text!, forKey: Keys.password.rawValue)
+        defaults.set(biometricSwitch.isOn, forKey: Keys.biometric.rawValue)
+    }
+    
+    func showPasswordEmptyAlert() {
+        let ac = UIAlertController(title: "Oops Password is empty", message: "Please enter password and try again!", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+        self.present(ac, animated: true)
     }
     
     func addBiometricAuthentication() {
