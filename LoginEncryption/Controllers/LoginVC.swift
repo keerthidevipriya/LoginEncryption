@@ -26,6 +26,7 @@ class LoginVC: UIViewController {
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.setTitle("Submit", for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        btn.addTarget(self, action: #selector(submitTapped), for: .touchUpInside)
         return btn
     }()
     
@@ -78,5 +79,18 @@ class LoginVC: UIViewController {
         baseView.backgroundColor = .white
         self.view.backgroundColor = .white
     }
+}
 
+extension LoginVC {
+    @objc func submitTapped() {
+        let notification = UILocalNotification()
+        notification.alertAction = "Hello"
+        notification.alertBody = "Welcome to the app!"
+        
+        notification.fireDate = Date(timeIntervalSinceNow: 0)
+        notification.soundName = UILocalNotificationDefaultSoundName
+        
+        notification.userInfo = ["title": "Title", "UUID": "12345"]
+        UIApplication.shared.scheduleLocalNotification(notification)
+    }
 }
