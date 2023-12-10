@@ -85,11 +85,11 @@ class LoginVC: UIViewController {
             titleLbl.centerXAnchor.constraint(equalTo: baseView.centerXAnchor),
             titleLbl.topAnchor.constraint(equalTo: baseView.topAnchor, constant: 408),
             
-            biometricSwitch.centerXAnchor.constraint(equalTo: baseView.centerXAnchor),
-            biometricSwitch.topAnchor.constraint(equalTo: titleLbl.bottomAnchor, constant: Constant.margin),
-            
             submitBtn.centerXAnchor.constraint(equalTo: baseView.centerXAnchor),
-            submitBtn.topAnchor.constraint(equalTo: biometricSwitch.bottomAnchor, constant: Constant.margin)
+            submitBtn.topAnchor.constraint(equalTo: titleLbl.bottomAnchor, constant: Constant.margin),
+            
+            biometricSwitch.centerXAnchor.constraint(equalTo: baseView.centerXAnchor),
+            biometricSwitch.topAnchor.constraint(equalTo: submitBtn.bottomAnchor, constant: Constant.margin)
         ])
     }
     
@@ -121,7 +121,7 @@ extension LoginVC {
                         self.showAuthfailedAlert()
                         return
                     }
-                    self.navigateToHomeVC()
+                    self.showBiometricsSuccessAlert()
                 }
             }
         } else {
@@ -129,13 +129,21 @@ extension LoginVC {
         }
     }
     
+    func showBiometricsSuccessAlert() {
+        let ac = UIAlertController(title: "Wohoo!!", message: "Biometrics added successfully", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        self.present(ac, animated: true)
+    }
+    
     func showAuthfailedAlert() {
+        biometricSwitch.isOn = false
         let ac = UIAlertController(title: "Authentication failed", message: "Please try again.", preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
         self.present(ac, animated: true)
     }
     
     func showNoBiometricAvailable() {
+        biometricSwitch.isOn = false
         let ac = UIAlertController(
             title: "Biometry unavailable",
             message: "Your device is not configured for biometric authentication.",
