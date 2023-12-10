@@ -6,12 +6,30 @@
 //
 
 import UIKit
+import UserNotifications
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    func notifications() {
+        let notificationCenter = UNUserNotificationCenter.current()
+        notificationCenter.requestAuthorization(options: [.sound, .badge, .alert]) { s, err in
+            if s {
+                print("Authorized sucessfully")
+            } else {
+                print("Authorization failed")
+            }
+        }
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        application.registerUserNotificationSettings(UIUserNotificationSettings(types: [.alert, .sound, .badge], categories: nil))
-            return true
+        notifications()
+        // when app in background use the following command
+        /*
+         xcrun simctl push DDCD1E99-DE6B-49BC-B023-C2601166531E com.encryption.login.LoginEncryption apn.apns
+         Tumblr Post: https://www.tumblr.com/visioncodekdp/736300827342520320/sending-the-push-notification-using-apns?source=share
+         */
+        return true
     }
 
     // MARK: UISceneSession Lifecycle
@@ -33,3 +51,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
+/*
+ apns json code
+ {
+     "aps" : {
+         "alert" : {
+             "title" : "Hi",
+             "subtitle" : "I am your notification",
+             "body" : "I would like to send the encrypted string",
+         },
+         "category" : "Identifier Buttons"
+     },
+     "id": "12345"
+ }
+ */
