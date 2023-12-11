@@ -182,7 +182,7 @@ extension LoginVC {
         pswdTextField.text = defaults.string(forKey: Keys.password.rawValue)
         biometricSwitch.isOn = defaults.bool(forKey: Keys.biometric.rawValue)
         /*if biometricSwitch.isOn {
-            self.navigateToHomeVC()
+            self.submitTapped()
         }*/
     }
     
