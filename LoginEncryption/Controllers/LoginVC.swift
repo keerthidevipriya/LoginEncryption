@@ -9,8 +9,6 @@ import LocalAuthentication
 import UIKit
 import RNCryptor
 
-let encryptionKEY = "$3N2@C7@pXp"
-
 class LoginVC: UIViewController {
     var defaults = UserDefaults.standard
     
@@ -96,8 +94,12 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
         self.title = "Login"
         loadData()
-        pswdTextField.addTarget(self, action: #selector(saveDetails), for: .editingChanged)
         configure()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        pswdTextField.addTarget(self, action: #selector(saveDetails), for: .editingChanged)
     }
     
     func configure() {
@@ -120,7 +122,6 @@ class LoginVC: UIViewController {
         baseView.addSubview(submitBtn)
         baseView.addSubview(biometricSwitch)
         baseView.addSubview(clearBtn)
-        baseView.addSubview(dataLbl)
         view.addSubview(baseView)
     }
     
@@ -133,7 +134,7 @@ class LoginVC: UIViewController {
             baseView.heightAnchor.constraint(equalToConstant: 370),
             
             titleLbl.centerXAnchor.constraint(equalTo: baseView.centerXAnchor),
-            titleLbl.topAnchor.constraint(equalTo: baseView.topAnchor, constant: 408),
+            titleLbl.topAnchor.constraint(equalTo: baseView.topAnchor, constant: 308),
             
             pswdTextField.centerXAnchor.constraint(equalTo: baseView.centerXAnchor),
             pswdTextField.topAnchor.constraint(equalTo: titleLbl.bottomAnchor, constant: Constant.margin),
@@ -147,10 +148,7 @@ class LoginVC: UIViewController {
             
             clearBtn.centerXAnchor.constraint(equalTo: baseView.centerXAnchor),
             clearBtn.topAnchor.constraint(equalTo: biometricSwitch.bottomAnchor, constant: Constant.margin),
-            clearBtn.widthAnchor.constraint(equalToConstant: Constant.btnWidth),
-            
-            dataLbl.centerXAnchor.constraint(equalTo: baseView.centerXAnchor),
-            dataLbl.topAnchor.constraint(equalTo: clearBtn.bottomAnchor, constant: Constant.margin)
+            clearBtn.widthAnchor.constraint(equalToConstant: Constant.btnWidth)
         ])
     }
     
@@ -161,44 +159,13 @@ class LoginVC: UIViewController {
 }
 
 extension LoginVC {
-    
-    func encryptData(_ pswd: String) {
-        let encryptedPasswordText =  self.encrypt(plainText: pswd, password: encryptionKEY)
-        decryptData(encryptedPasswordText)
-    }
-    
-    func decryptData(_ encryptedPasswordText: String) {
-        let decryptedPswd = self.decrypt(encryptedText: encryptedPasswordText, password: encryptionKEY)
-        dataLbl.text = decryptedPswd
-    }
-    
-    func encrypt(plainText : String, password: String) -> String {
-        guard let data: Data = plainText.data(using: .utf8) else { return String() }
-        let encryptedData = RNCryptor.encrypt(data: data, withPassword: encryptionKEY)
-        let encryptedString : String = encryptedData.base64EncodedString() // getting base64encoded string of encrypted data.
-        return encryptedString
-    }
-    
-    func decrypt(encryptedText : String, password: String) -> String {
-        do  {
-            let data: Data = Data(base64Encoded: encryptedText)! // Just get data from encrypted base64Encoded string.
-            let decryptedData = try RNCryptor.decrypt(data: data, withPassword: password)
-            let decryptedString = String(data: decryptedData, encoding: .utf8) // Getting original string, using same .utf8 encoding option,which we used for encryption.
-            return decryptedString ?? ""
-        }
-        catch {
-            return "FAILED"
-        }
-    }
-}
-
-extension LoginVC {
     @objc func submitTapped() {
         handleNotification()
         if let pswd = pswdTextField.text, !pswd.isEmpty {
-            self.encryptData(pswd)
-            self.saveDetails()
-            self.navigateToHomeVC()
+            Utility.encryptData(pswd, completion: { encryptedPswd in
+                self.saveDetails()
+                self.navigateToHomeVC(encryptedPswd)
+            })
         } else {
             self.showPasswordEmptyAlert()
         }
@@ -284,8 +251,8 @@ extension LoginVC {
         }
     }
     
-    func navigateToHomeVC() {
-        let vc = HomeVC.makeViewController()
+    func navigateToHomeVC(_ encryptedPswd: String) {
+        let vc = HomeVC.makeViewController(encryptedPswd: encryptedPswd)
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

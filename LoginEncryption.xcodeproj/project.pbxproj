@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5618A1102B2772FD00FC0892 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5618A10F2B2772FD00FC0892 /* Utility.swift */; };
 		56D202F62B24BBF10020E1A3 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D202F52B24BBF10020E1A3 /* LoginVC.swift */; };
 		56D202F92B24BCCB0020E1A3 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D202F82B24BCCB0020E1A3 /* HomeVC.swift */; };
 		56F2AE832B232FDC00A3298E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F2AE822B232FDC00A3298E /* AppDelegate.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5618A10F2B2772FD00FC0892 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		56D202F52B24BBF10020E1A3 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		56D202F82B24BCCB0020E1A3 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		56F2AE7F2B232FDC00A3298E /* LoginEncryption.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginEncryption.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +134,7 @@
 				56D202F72B24BBFC0020E1A3 /* Controllers */,
 				56F2AE822B232FDC00A3298E /* AppDelegate.swift */,
 				56F2AE842B232FDC00A3298E /* SceneDelegate.swift */,
+				5618A10F2B2772FD00FC0892 /* Utility.swift */,
 				56F2AE862B232FDC00A3298E /* ViewController.swift */,
 				56F2AE882B232FDC00A3298E /* Main.storyboard */,
 				56F2AE8B2B232FDC00A3298E /* Assets.xcassets */,
@@ -178,7 +181,6 @@
 				DB9D93B6378F25AC7E0CA718 /* Pods-LoginEncryptionTests.debug.xcconfig */,
 				A2A6C1DFB9D23F0F6555C4A7 /* Pods-LoginEncryptionTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -423,6 +425,7 @@
 			files = (
 				56F2AE872B232FDC00A3298E /* ViewController.swift in Sources */,
 				56D202F92B24BCCB0020E1A3 /* HomeVC.swift in Sources */,
+				5618A1102B2772FD00FC0892 /* Utility.swift in Sources */,
 				56F2AE832B232FDC00A3298E /* AppDelegate.swift in Sources */,
 				56D202F62B24BBF10020E1A3 /* LoginVC.swift in Sources */,
 				56F2AE852B232FDC00A3298E /* SceneDelegate.swift in Sources */,
