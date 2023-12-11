@@ -7,19 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5B414759F182F4E7072684BF1738C55D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		5CFD0A1091ACB0DCCB3980E8243B6842 /* Pods-LoginEncryptionTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CC00C0E2AFDAB8D9FD98C0A880A19FAB /* Pods-LoginEncryptionTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0FF0E22AFC6C5FEF79D49C28FD4EAE98 /* RNCryptor-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E5018ED51913B2EA440EE821F2810E /* RNCryptor-dummy.m */; };
+		2F3802955BC880DA8BC7E17E19B4B55F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		3172BC1BCB20655D5C3B12FF6AE169AC /* Pods-LoginEncryption-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 276AF847925B248FECF855FCBC06F3A7 /* Pods-LoginEncryption-dummy.m */; };
+		333999B13BCE92B316ADA3622E9E9439 /* RNCryptor-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 799E797A23867F22A3D1BDF15CFF9650 /* RNCryptor-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34FC20F6CFE446374DA321FC973EB0E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		5072EC0BD3928386A0CBC5E9510798AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		5284B5C7E87476954E1B2CEE8C13DFCF /* Pods-LoginEncryption-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B42FABB8CD4642C24C73ED2ED6BD8C2 /* Pods-LoginEncryption-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5CFD0A1091ACB0DCCB3980E8243B6842 /* Pods-LoginEncryptionTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BA64A27C91FC5C0CF72F471CCF9C5B0C /* Pods-LoginEncryptionTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7D22398591FE817E62FFE0B6F0AEF356 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		816518F9D46CFA02CF0203ED52F0D46D /* Pods-LoginEncryptionTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 791EDF83B2CB689068EAFB525BCBB5DB /* Pods-LoginEncryptionTests-dummy.m */; };
-		8352434F266A0155158FADA30E8E9EE1 /* Pods-LoginEncryption-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 201C8CDF054BD5BCE894546AF4AA1B09 /* Pods-LoginEncryption-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		84ED2B8B861E4FDF8B7A287A2F381F19 /* Pods-LoginEncryption-LoginEncryptionUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D990C6ADB66279E4434F5449B91B472E /* Pods-LoginEncryption-LoginEncryptionUITests-dummy.m */; };
-		8593AEA838DC72F7A70FF56CA461F4E3 /* Pods-LoginEncryption-LoginEncryptionUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B5BFCE9631B387B1B57BF86990BDB11 /* Pods-LoginEncryption-LoginEncryptionUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D8D57C09D0B78A97A23525FA2344CA1B /* Pods-LoginEncryption-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A57BCD3B123A359134D4C15E3213DAC /* Pods-LoginEncryption-dummy.m */; };
-		EBEEBCA32628A19D6E857681614AB1D8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		816518F9D46CFA02CF0203ED52F0D46D /* Pods-LoginEncryptionTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C7F2B2121F7A555707ECCC7B7004A5A /* Pods-LoginEncryptionTests-dummy.m */; };
+		9998A5467D72B65B9B49CB6355F9E56B /* RNCryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B6EC114A39578F18C4BC4ECF28F2BF /* RNCryptor.swift */; };
+		B7B3522D71F6A98D5BBC3DE0EF32044F /* Pods-LoginEncryption-LoginEncryptionUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 199CCCDB469DBC3916DA35DBC89DE77E /* Pods-LoginEncryption-LoginEncryptionUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CFE3EC7C532794315EB336FACA0C1408 /* Pods-LoginEncryption-LoginEncryptionUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3595346071074FAC4D3C2506DDFAAB38 /* Pods-LoginEncryption-LoginEncryptionUITests-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B330F77E943A4669CCAD9394296495C9 /* PBXContainerItemProxy */ = {
+		46517E02F193025BDF2EADC005FC144E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05CCA2AD142519DF6FED0979BACBC149;
+			remoteInfo = RNCryptor;
+		};
+		BB670954F68E40BB9054349CB73D3E49 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05CCA2AD142519DF6FED0979BACBC149;
+			remoteInfo = RNCryptor;
+		};
+		E19CF2262EDD5D1137E1206F4EB89E67 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -29,38 +47,65 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0544D7F18F39CDD3430E8B073D9AD449 /* Pods_LoginEncryption.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoginEncryption.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		054D549126DDB06C2BD9C69F2FC40AF9 /* Pods-LoginEncryption-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LoginEncryption-acknowledgements.markdown"; sourceTree = "<group>"; };
-		0B5BFCE9631B387B1B57BF86990BDB11 /* Pods-LoginEncryption-LoginEncryptionUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LoginEncryption-LoginEncryptionUITests-umbrella.h"; sourceTree = "<group>"; };
-		10EA9BDA70D47E350C496DA0ED089468 /* Pods-LoginEncryptionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LoginEncryptionTests.debug.xcconfig"; sourceTree = "<group>"; };
-		1DEE1F6AA3FEA06B2E8F77C3706C045B /* Pods-LoginEncryption-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LoginEncryption-acknowledgements.plist"; sourceTree = "<group>"; };
-		201C8CDF054BD5BCE894546AF4AA1B09 /* Pods-LoginEncryption-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LoginEncryption-umbrella.h"; sourceTree = "<group>"; };
-		22055C50EB53F3BF0143F79AAD565559 /* Pods-LoginEncryption-LoginEncryptionUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LoginEncryption-LoginEncryptionUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		38DAEE40A505E77CA9B0C7DE852550FE /* Pods-LoginEncryptionTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LoginEncryptionTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		48A60FCCBD29ECA3E2B4BE98C10E51D3 /* Pods-LoginEncryption-LoginEncryptionUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LoginEncryption-LoginEncryptionUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		4A57BCD3B123A359134D4C15E3213DAC /* Pods-LoginEncryption-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LoginEncryption-dummy.m"; sourceTree = "<group>"; };
-		5C155E3BCA15463865A7D19550EB8692 /* Pods-LoginEncryptionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LoginEncryptionTests.release.xcconfig"; sourceTree = "<group>"; };
-		6705B2F67285479F25B382B17242040C /* Pods-LoginEncryption-LoginEncryptionUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LoginEncryption-LoginEncryptionUITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		6B6B1CB248787862FDB69CBC44F54786 /* Pods-LoginEncryptionTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LoginEncryptionTests.modulemap"; sourceTree = "<group>"; };
+		0175A22FF546DEA7C81ADB08CD69A47A /* RNCryptor.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RNCryptor.modulemap; sourceTree = "<group>"; };
+		0544D7F18F39CDD3430E8B073D9AD449 /* Pods-LoginEncryption */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-LoginEncryption"; path = Pods_LoginEncryption.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05AEFAE5FED3E6A6D3F1EC20C4341FFE /* Pods-LoginEncryption-LoginEncryptionUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LoginEncryption-LoginEncryptionUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		06817DE35A6E16B0FDA1A7C3BC90F9F5 /* Pods-LoginEncryption-LoginEncryptionUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LoginEncryption-LoginEncryptionUITests-Info.plist"; sourceTree = "<group>"; };
+		0B42FABB8CD4642C24C73ED2ED6BD8C2 /* Pods-LoginEncryption-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LoginEncryption-umbrella.h"; sourceTree = "<group>"; };
+		176A3F6A92F68525D39E89B518A4D075 /* Pods-LoginEncryption-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LoginEncryption-acknowledgements.plist"; sourceTree = "<group>"; };
+		1876A9EE3145458FC9242D230646B967 /* RNCryptor-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RNCryptor-prefix.pch"; sourceTree = "<group>"; };
+		18C5C8FB225B22DAAAFE544F04F1054A /* RNCryptor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RNCryptor.release.xcconfig; sourceTree = "<group>"; };
+		199CCCDB469DBC3916DA35DBC89DE77E /* Pods-LoginEncryption-LoginEncryptionUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LoginEncryption-LoginEncryptionUITests-umbrella.h"; sourceTree = "<group>"; };
+		244FDF8DB24E9B86B21A9C2B0D9508DF /* Pods-LoginEncryption-LoginEncryptionUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LoginEncryption-LoginEncryptionUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		263923B255D3EC9096FA77D969E889A0 /* Pods-LoginEncryptionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LoginEncryptionTests.release.xcconfig"; sourceTree = "<group>"; };
+		276AF847925B248FECF855FCBC06F3A7 /* Pods-LoginEncryption-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LoginEncryption-dummy.m"; sourceTree = "<group>"; };
+		31F38AFF8286F7C12200FE8A1E35A631 /* Pods-LoginEncryptionTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LoginEncryptionTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		3595346071074FAC4D3C2506DDFAAB38 /* Pods-LoginEncryption-LoginEncryptionUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LoginEncryption-LoginEncryptionUITests-dummy.m"; sourceTree = "<group>"; };
+		3AEE21E82C0C45A9C155BB4F8A756847 /* Pods-LoginEncryption-LoginEncryptionUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LoginEncryption-LoginEncryptionUITests.modulemap"; sourceTree = "<group>"; };
+		3C7F2B2121F7A555707ECCC7B7004A5A /* Pods-LoginEncryptionTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LoginEncryptionTests-dummy.m"; sourceTree = "<group>"; };
+		4F8B9CFB867EF36F6CEBA218B12EBA54 /* Pods-LoginEncryptionTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LoginEncryptionTests-Info.plist"; sourceTree = "<group>"; };
+		534282BE88C9BF0BA2ED74BA7130AEA3 /* RNCryptor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RNCryptor.debug.xcconfig; sourceTree = "<group>"; };
+		5695F9F4589872E5C5F5CC24E4596766 /* Pods-LoginEncryption-LoginEncryptionUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LoginEncryption-LoginEncryptionUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6181893ABA0E7ECE6B0EEDD7C3965DF7 /* Pods-LoginEncryption-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LoginEncryption-frameworks.sh"; sourceTree = "<group>"; };
+		6ABB6D51A6B9B782952B2CC90644204A /* Pods-LoginEncryption-LoginEncryptionUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LoginEncryption-LoginEncryptionUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		791EDF83B2CB689068EAFB525BCBB5DB /* Pods-LoginEncryptionTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LoginEncryptionTests-dummy.m"; sourceTree = "<group>"; };
-		7A9E089863A1760250B772147A61F807 /* Pods-LoginEncryption-LoginEncryptionUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LoginEncryption-LoginEncryptionUITests-Info.plist"; sourceTree = "<group>"; };
-		80E5A729E4E3405944F49E07DEE8152F /* Pods-LoginEncryption.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LoginEncryption.release.xcconfig"; sourceTree = "<group>"; };
-		907910A02B5B2A2F81EB5C5D72AFE314 /* Pods-LoginEncryption.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LoginEncryption.modulemap"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9DB7A5B95691162A2CF247AB559DC340 /* Pods-LoginEncryptionTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LoginEncryptionTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		73B6EC114A39578F18C4BC4ECF28F2BF /* RNCryptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RNCryptor.swift; path = Sources/RNCryptor/RNCryptor.swift; sourceTree = "<group>"; };
+		799E797A23867F22A3D1BDF15CFF9650 /* RNCryptor-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RNCryptor-umbrella.h"; sourceTree = "<group>"; };
+		7E832EABA69E830F195EBE097BD7CF17 /* Pods-LoginEncryptionTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LoginEncryptionTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		8E9677254FA6D907ADF1D2978E0485B4 /* Pods-LoginEncryption.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LoginEncryption.modulemap"; sourceTree = "<group>"; };
+		91A20A4B47C4D8DCF44EEAFD7C4BDE06 /* RNCryptor-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "RNCryptor-Info.plist"; sourceTree = "<group>"; };
+		9765B7B3CFA1942E9A017E1A75A84290 /* Pods-LoginEncryptionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LoginEncryptionTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A11BC8E18F7BF884B35E2150DC5F918B /* Pods-LoginEncryption.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LoginEncryption.debug.xcconfig"; sourceTree = "<group>"; };
 		AF9B86270DD376EB20B00963AD6584B4 /* Pods-LoginEncryption-LoginEncryptionUITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-LoginEncryption-LoginEncryptionUITests"; path = Pods_LoginEncryption_LoginEncryptionUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BCE563F0E77116F9B90AF1A512ED0CE4 /* Pods-LoginEncryption-LoginEncryptionUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LoginEncryption-LoginEncryptionUITests.modulemap"; sourceTree = "<group>"; };
-		C13D0F041EB30EE76FD31A947E4C0F13 /* Pods-LoginEncryption.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LoginEncryption.debug.xcconfig"; sourceTree = "<group>"; };
-		C4887167865926A08F142A667F6FEF76 /* Pods-LoginEncryption-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LoginEncryption-Info.plist"; sourceTree = "<group>"; };
-		CC00C0E2AFDAB8D9FD98C0A880A19FAB /* Pods-LoginEncryptionTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LoginEncryptionTests-umbrella.h"; sourceTree = "<group>"; };
-		D381FBAECC14F1248F08BF53270EAFD0 /* Pods-LoginEncryption-LoginEncryptionUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LoginEncryption-LoginEncryptionUITests.release.xcconfig"; sourceTree = "<group>"; };
-		D941DA2F9730B6A98F158F83795A6AAA /* Pods-LoginEncryptionTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LoginEncryptionTests-Info.plist"; sourceTree = "<group>"; };
-		D990C6ADB66279E4434F5449B91B472E /* Pods-LoginEncryption-LoginEncryptionUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LoginEncryption-LoginEncryptionUITests-dummy.m"; sourceTree = "<group>"; };
+		BA64A27C91FC5C0CF72F471CCF9C5B0C /* Pods-LoginEncryptionTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LoginEncryptionTests-umbrella.h"; sourceTree = "<group>"; };
+		BEEA531852BBBB9CC339D2C9FEE1EEC7 /* Pods-LoginEncryption-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LoginEncryption-acknowledgements.markdown"; sourceTree = "<group>"; };
+		C90F1C16B45B4B613B1B9762C0AC346E /* Pods-LoginEncryption.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LoginEncryption.release.xcconfig"; sourceTree = "<group>"; };
+		CBB31FCAECA500FA5AD8D572E3B8AEEE /* Pods-LoginEncryptionTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LoginEncryptionTests.modulemap"; sourceTree = "<group>"; };
+		E0E5018ED51913B2EA440EE821F2810E /* RNCryptor-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RNCryptor-dummy.m"; sourceTree = "<group>"; };
+		E875A41F793CE29A84EAC3FD401B771C /* Pods-LoginEncryption-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LoginEncryption-Info.plist"; sourceTree = "<group>"; };
 		E953F982D3648189DF95F0F8A7BFA9CC /* Pods-LoginEncryptionTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-LoginEncryptionTests"; path = Pods_LoginEncryptionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECD22DCA04701ABD6518F5BC8768CB26 /* Pods-LoginEncryption-LoginEncryptionUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LoginEncryption-LoginEncryptionUITests-frameworks.sh"; sourceTree = "<group>"; };
+		F6320389F628433B78C81FB217A0485D /* RNCryptor */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RNCryptor; path = RNCryptor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		06AB1FC797C823BD971B53EF2AB71520 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34FC20F6CFE446374DA321FC973EB0E6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28ACE38D0907007708C0893450643008 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F3802955BC880DA8BC7E17E19B4B55F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3B95F46FE1A27E0328DAF17F9198E3CC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -69,25 +114,72 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3E76E0741B5CDE946EACEED49D8E52A5 /* Frameworks */ = {
+		5C215506D062EE336A56F23897DE0116 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B414759F182F4E7072684BF1738C55D /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B7108A15EE57526C3F7D84D119A7BBA0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EBEEBCA32628A19D6E857681614AB1D8 /* Foundation.framework in Frameworks */,
+				5072EC0BD3928386A0CBC5E9510798AE /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		25D1484E429523CA28F4C4B310DF32B6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2DEE78A83A3E6878B4E6F6867833EAC4 /* RNCryptor */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		2DEE78A83A3E6878B4E6F6867833EAC4 /* RNCryptor */ = {
+			isa = PBXGroup;
+			children = (
+				73B6EC114A39578F18C4BC4ECF28F2BF /* RNCryptor.swift */,
+				BF7E96187ACF3CB82D921B1B17C35CEA /* Support Files */,
+			);
+			name = RNCryptor;
+			path = RNCryptor;
+			sourceTree = "<group>";
+		};
+		3BBEF8DEFF59FA1E476AD1476B9A8CC6 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				FA53FAC0D11D9477102ACBB91E42B384 /* Pods-LoginEncryption */,
+				9CBF7A25F0111EC644C72215EC1100F9 /* Pods-LoginEncryption-LoginEncryptionUITests */,
+				446A8065725FED5A78BB74670D6553A0 /* Pods-LoginEncryptionTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		446A8065725FED5A78BB74670D6553A0 /* Pods-LoginEncryptionTests */ = {
+			isa = PBXGroup;
+			children = (
+				CBB31FCAECA500FA5AD8D572E3B8AEEE /* Pods-LoginEncryptionTests.modulemap */,
+				31F38AFF8286F7C12200FE8A1E35A631 /* Pods-LoginEncryptionTests-acknowledgements.markdown */,
+				7E832EABA69E830F195EBE097BD7CF17 /* Pods-LoginEncryptionTests-acknowledgements.plist */,
+				3C7F2B2121F7A555707ECCC7B7004A5A /* Pods-LoginEncryptionTests-dummy.m */,
+				4F8B9CFB867EF36F6CEBA218B12EBA54 /* Pods-LoginEncryptionTests-Info.plist */,
+				BA64A27C91FC5C0CF72F471CCF9C5B0C /* Pods-LoginEncryptionTests-umbrella.h */,
+				9765B7B3CFA1942E9A017E1A75A84290 /* Pods-LoginEncryptionTests.debug.xcconfig */,
+				263923B255D3EC9096FA77D969E889A0 /* Pods-LoginEncryptionTests.release.xcconfig */,
+			);
+			name = "Pods-LoginEncryptionTests";
+			path = "Target Support Files/Pods-LoginEncryptionTests";
+			sourceTree = "<group>";
+		};
+		55182206F04F308706939C9DC0CEEC17 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0544D7F18F39CDD3430E8B073D9AD449 /* Pods-LoginEncryption */,
+				AF9B86270DD376EB20B00963AD6584B4 /* Pods-LoginEncryption-LoginEncryptionUITests */,
+				E953F982D3648189DF95F0F8A7BFA9CC /* Pods-LoginEncryptionTests */,
+				F6320389F628433B78C81FB217A0485D /* RNCryptor */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -96,56 +188,36 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		91CEA3BD241A47D793695A80A11F56DE /* Products */ = {
+		9CBF7A25F0111EC644C72215EC1100F9 /* Pods-LoginEncryption-LoginEncryptionUITests */ = {
 			isa = PBXGroup;
 			children = (
-				0544D7F18F39CDD3430E8B073D9AD449 /* Pods_LoginEncryption.framework */,
-				AF9B86270DD376EB20B00963AD6584B4 /* Pods-LoginEncryption-LoginEncryptionUITests */,
-				E953F982D3648189DF95F0F8A7BFA9CC /* Pods-LoginEncryptionTests */,
+				3AEE21E82C0C45A9C155BB4F8A756847 /* Pods-LoginEncryption-LoginEncryptionUITests.modulemap */,
+				244FDF8DB24E9B86B21A9C2B0D9508DF /* Pods-LoginEncryption-LoginEncryptionUITests-acknowledgements.markdown */,
+				6ABB6D51A6B9B782952B2CC90644204A /* Pods-LoginEncryption-LoginEncryptionUITests-acknowledgements.plist */,
+				3595346071074FAC4D3C2506DDFAAB38 /* Pods-LoginEncryption-LoginEncryptionUITests-dummy.m */,
+				ECD22DCA04701ABD6518F5BC8768CB26 /* Pods-LoginEncryption-LoginEncryptionUITests-frameworks.sh */,
+				06817DE35A6E16B0FDA1A7C3BC90F9F5 /* Pods-LoginEncryption-LoginEncryptionUITests-Info.plist */,
+				199CCCDB469DBC3916DA35DBC89DE77E /* Pods-LoginEncryption-LoginEncryptionUITests-umbrella.h */,
+				05AEFAE5FED3E6A6D3F1EC20C4341FFE /* Pods-LoginEncryption-LoginEncryptionUITests.debug.xcconfig */,
+				5695F9F4589872E5C5F5CC24E4596766 /* Pods-LoginEncryption-LoginEncryptionUITests.release.xcconfig */,
 			);
-			name = Products;
+			name = "Pods-LoginEncryption-LoginEncryptionUITests";
+			path = "Target Support Files/Pods-LoginEncryption-LoginEncryptionUITests";
 			sourceTree = "<group>";
 		};
-		AFFFA0227E1444EABEDCFC85E31CEB03 /* Pods-LoginEncryptionTests */ = {
+		BF7E96187ACF3CB82D921B1B17C35CEA /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				6B6B1CB248787862FDB69CBC44F54786 /* Pods-LoginEncryptionTests.modulemap */,
-				38DAEE40A505E77CA9B0C7DE852550FE /* Pods-LoginEncryptionTests-acknowledgements.markdown */,
-				9DB7A5B95691162A2CF247AB559DC340 /* Pods-LoginEncryptionTests-acknowledgements.plist */,
-				791EDF83B2CB689068EAFB525BCBB5DB /* Pods-LoginEncryptionTests-dummy.m */,
-				D941DA2F9730B6A98F158F83795A6AAA /* Pods-LoginEncryptionTests-Info.plist */,
-				CC00C0E2AFDAB8D9FD98C0A880A19FAB /* Pods-LoginEncryptionTests-umbrella.h */,
-				10EA9BDA70D47E350C496DA0ED089468 /* Pods-LoginEncryptionTests.debug.xcconfig */,
-				5C155E3BCA15463865A7D19550EB8692 /* Pods-LoginEncryptionTests.release.xcconfig */,
+				0175A22FF546DEA7C81ADB08CD69A47A /* RNCryptor.modulemap */,
+				E0E5018ED51913B2EA440EE821F2810E /* RNCryptor-dummy.m */,
+				91A20A4B47C4D8DCF44EEAFD7C4BDE06 /* RNCryptor-Info.plist */,
+				1876A9EE3145458FC9242D230646B967 /* RNCryptor-prefix.pch */,
+				799E797A23867F22A3D1BDF15CFF9650 /* RNCryptor-umbrella.h */,
+				534282BE88C9BF0BA2ED74BA7130AEA3 /* RNCryptor.debug.xcconfig */,
+				18C5C8FB225B22DAAAFE544F04F1054A /* RNCryptor.release.xcconfig */,
 			);
-			name = "Pods-LoginEncryptionTests";
-			path = "Target Support Files/Pods-LoginEncryptionTests";
-			sourceTree = "<group>";
-		};
-		C2369C01EA85117E51C7F3E052594864 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				CE4C9CD12B492752CC2291D5595BAFFE /* Pods-LoginEncryption */,
-				F7AFDF80B7DDD8E3187000DCE071FD53 /* Pods-LoginEncryption-LoginEncryptionUITests */,
-				AFFFA0227E1444EABEDCFC85E31CEB03 /* Pods-LoginEncryptionTests */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		CE4C9CD12B492752CC2291D5595BAFFE /* Pods-LoginEncryption */ = {
-			isa = PBXGroup;
-			children = (
-				907910A02B5B2A2F81EB5C5D72AFE314 /* Pods-LoginEncryption.modulemap */,
-				054D549126DDB06C2BD9C69F2FC40AF9 /* Pods-LoginEncryption-acknowledgements.markdown */,
-				1DEE1F6AA3FEA06B2E8F77C3706C045B /* Pods-LoginEncryption-acknowledgements.plist */,
-				4A57BCD3B123A359134D4C15E3213DAC /* Pods-LoginEncryption-dummy.m */,
-				C4887167865926A08F142A667F6FEF76 /* Pods-LoginEncryption-Info.plist */,
-				201C8CDF054BD5BCE894546AF4AA1B09 /* Pods-LoginEncryption-umbrella.h */,
-				C13D0F041EB30EE76FD31A947E4C0F13 /* Pods-LoginEncryption.debug.xcconfig */,
-				80E5A729E4E3405944F49E07DEE8152F /* Pods-LoginEncryption.release.xcconfig */,
-			);
-			name = "Pods-LoginEncryption";
-			path = "Target Support Files/Pods-LoginEncryption";
+			name = "Support Files";
+			path = "../Target Support Files/RNCryptor";
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -153,8 +225,9 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				91CEA3BD241A47D793695A80A11F56DE /* Products */,
-				C2369C01EA85117E51C7F3E052594864 /* Targets Support Files */,
+				25D1484E429523CA28F4C4B310DF32B6 /* Pods */,
+				55182206F04F308706939C9DC0CEEC17 /* Products */,
+				3BBEF8DEFF59FA1E476AD1476B9A8CC6 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -166,38 +239,47 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F7AFDF80B7DDD8E3187000DCE071FD53 /* Pods-LoginEncryption-LoginEncryptionUITests */ = {
+		FA53FAC0D11D9477102ACBB91E42B384 /* Pods-LoginEncryption */ = {
 			isa = PBXGroup;
 			children = (
-				BCE563F0E77116F9B90AF1A512ED0CE4 /* Pods-LoginEncryption-LoginEncryptionUITests.modulemap */,
-				22055C50EB53F3BF0143F79AAD565559 /* Pods-LoginEncryption-LoginEncryptionUITests-acknowledgements.markdown */,
-				6705B2F67285479F25B382B17242040C /* Pods-LoginEncryption-LoginEncryptionUITests-acknowledgements.plist */,
-				D990C6ADB66279E4434F5449B91B472E /* Pods-LoginEncryption-LoginEncryptionUITests-dummy.m */,
-				7A9E089863A1760250B772147A61F807 /* Pods-LoginEncryption-LoginEncryptionUITests-Info.plist */,
-				0B5BFCE9631B387B1B57BF86990BDB11 /* Pods-LoginEncryption-LoginEncryptionUITests-umbrella.h */,
-				48A60FCCBD29ECA3E2B4BE98C10E51D3 /* Pods-LoginEncryption-LoginEncryptionUITests.debug.xcconfig */,
-				D381FBAECC14F1248F08BF53270EAFD0 /* Pods-LoginEncryption-LoginEncryptionUITests.release.xcconfig */,
+				8E9677254FA6D907ADF1D2978E0485B4 /* Pods-LoginEncryption.modulemap */,
+				BEEA531852BBBB9CC339D2C9FEE1EEC7 /* Pods-LoginEncryption-acknowledgements.markdown */,
+				176A3F6A92F68525D39E89B518A4D075 /* Pods-LoginEncryption-acknowledgements.plist */,
+				276AF847925B248FECF855FCBC06F3A7 /* Pods-LoginEncryption-dummy.m */,
+				6181893ABA0E7ECE6B0EEDD7C3965DF7 /* Pods-LoginEncryption-frameworks.sh */,
+				E875A41F793CE29A84EAC3FD401B771C /* Pods-LoginEncryption-Info.plist */,
+				0B42FABB8CD4642C24C73ED2ED6BD8C2 /* Pods-LoginEncryption-umbrella.h */,
+				A11BC8E18F7BF884B35E2150DC5F918B /* Pods-LoginEncryption.debug.xcconfig */,
+				C90F1C16B45B4B613B1B9762C0AC346E /* Pods-LoginEncryption.release.xcconfig */,
 			);
-			name = "Pods-LoginEncryption-LoginEncryptionUITests";
-			path = "Target Support Files/Pods-LoginEncryption-LoginEncryptionUITests";
+			name = "Pods-LoginEncryption";
+			path = "Target Support Files/Pods-LoginEncryption";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		54AD6F626A51893A07B709E8A5E0D4DA /* Headers */ = {
+		75F9BC6B687C30B4A0C934C1894DCCF9 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8352434F266A0155158FADA30E8E9EE1 /* Pods-LoginEncryption-umbrella.h in Headers */,
+				5284B5C7E87476954E1B2CEE8C13DFCF /* Pods-LoginEncryption-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8E5CCC827A8F338A14FE4B293549EF68 /* Headers */ = {
+		7C897C414DBBDBD81CBD5742ED62333A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8593AEA838DC72F7A70FF56CA461F4E3 /* Pods-LoginEncryption-LoginEncryptionUITests-umbrella.h in Headers */,
+				333999B13BCE92B316ADA3622E9E9439 /* RNCryptor-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E63302427331DA819936BB7EE5F9979 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7B3522D71F6A98D5BBC3DE0EF32044F /* Pods-LoginEncryption-LoginEncryptionUITests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,22 +294,41 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		4D66D4E340156A9F3D561E2E40F95A32 /* Pods-LoginEncryption */ = {
+		05CCA2AD142519DF6FED0979BACBC149 /* RNCryptor */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5D65B00A1C6918DF88D112873CE53CF7 /* Build configuration list for PBXNativeTarget "Pods-LoginEncryption" */;
+			buildConfigurationList = 1B300D8B511853425712CC6DAE52E171 /* Build configuration list for PBXNativeTarget "RNCryptor" */;
 			buildPhases = (
-				54AD6F626A51893A07B709E8A5E0D4DA /* Headers */,
-				8EFA58693E96D491B642FBD03566CA21 /* Sources */,
-				3E76E0741B5CDE946EACEED49D8E52A5 /* Frameworks */,
-				C45E085AD08AD7F2587C5888847DCBC5 /* Resources */,
+				7C897C414DBBDBD81CBD5742ED62333A /* Headers */,
+				5F2DD3CE81A775A68D790B41628CC8BA /* Sources */,
+				28ACE38D0907007708C0893450643008 /* Frameworks */,
+				5304EC13A5214D9C74280B25FCF63BD1 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
+			name = RNCryptor;
+			productName = RNCryptor;
+			productReference = F6320389F628433B78C81FB217A0485D /* RNCryptor */;
+			productType = "com.apple.product-type.framework";
+		};
+		4D66D4E340156A9F3D561E2E40F95A32 /* Pods-LoginEncryption */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7405B575972FD184DB49CAB81F3344FB /* Build configuration list for PBXNativeTarget "Pods-LoginEncryption" */;
+			buildPhases = (
+				75F9BC6B687C30B4A0C934C1894DCCF9 /* Headers */,
+				8594FA364B849C4230715EDA151AC524 /* Sources */,
+				06AB1FC797C823BD971B53EF2AB71520 /* Frameworks */,
+				113B652219879A86D0CFF1F013F6D72A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5BE277F0D49081F6C6622774D2CEFC8A /* PBXTargetDependency */,
+			);
 			name = "Pods-LoginEncryption";
 			productName = Pods_LoginEncryption;
-			productReference = 0544D7F18F39CDD3430E8B073D9AD449 /* Pods_LoginEncryption.framework */;
+			productReference = 0544D7F18F39CDD3430E8B073D9AD449 /* Pods-LoginEncryption */;
 			productType = "com.apple.product-type.framework";
 		};
 		921BAE15D7240C1AE2FF6D8FA29B7226 /* Pods-LoginEncryptionTests */ = {
@@ -242,7 +343,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				F34449980C38B003437F9705F211EABC /* PBXTargetDependency */,
+				0F8F8487FA7552815D0BD1AC02980046 /* PBXTargetDependency */,
 			);
 			name = "Pods-LoginEncryptionTests";
 			productName = Pods_LoginEncryptionTests;
@@ -251,16 +352,17 @@
 		};
 		F80CF3B45F6B8668A3A49CC1C564AC60 /* Pods-LoginEncryption-LoginEncryptionUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 99BA9FBB0CD3335F91178C42E73A1A4A /* Build configuration list for PBXNativeTarget "Pods-LoginEncryption-LoginEncryptionUITests" */;
+			buildConfigurationList = 28E5CD0AF77333D4E9AFE36D26D6073F /* Build configuration list for PBXNativeTarget "Pods-LoginEncryption-LoginEncryptionUITests" */;
 			buildPhases = (
-				8E5CCC827A8F338A14FE4B293549EF68 /* Headers */,
-				F51C9227C1B82DDAFE9C90628C1E5D28 /* Sources */,
-				B7108A15EE57526C3F7D84D119A7BBA0 /* Frameworks */,
-				2F7C35B0ECC318F61D2246C88A27AF19 /* Resources */,
+				8E63302427331DA819936BB7EE5F9979 /* Headers */,
+				DF2075DF935ECBD1DB4512D7D4A2D8A3 /* Sources */,
+				5C215506D062EE336A56F23897DE0116 /* Frameworks */,
+				F805360FA8A7F04CE89E69B74F0E2198 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				1728F4F363562E5042EE41E5540C4CBB /* PBXTargetDependency */,
 			);
 			name = "Pods-LoginEncryption-LoginEncryptionUITests";
 			productName = Pods_LoginEncryption_LoginEncryptionUITests;
@@ -285,26 +387,34 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 91CEA3BD241A47D793695A80A11F56DE /* Products */;
+			productRefGroup = 55182206F04F308706939C9DC0CEEC17 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				4D66D4E340156A9F3D561E2E40F95A32 /* Pods-LoginEncryption */,
 				F80CF3B45F6B8668A3A49CC1C564AC60 /* Pods-LoginEncryption-LoginEncryptionUITests */,
 				921BAE15D7240C1AE2FF6D8FA29B7226 /* Pods-LoginEncryptionTests */,
+				05CCA2AD142519DF6FED0979BACBC149 /* RNCryptor */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		2F7C35B0ECC318F61D2246C88A27AF19 /* Resources */ = {
+		113B652219879A86D0CFF1F013F6D72A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C45E085AD08AD7F2587C5888847DCBC5 /* Resources */ = {
+		5304EC13A5214D9C74280B25FCF63BD1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F805360FA8A7F04CE89E69B74F0E2198 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -329,37 +439,58 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8EFA58693E96D491B642FBD03566CA21 /* Sources */ = {
+		5F2DD3CE81A775A68D790B41628CC8BA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8D57C09D0B78A97A23525FA2344CA1B /* Pods-LoginEncryption-dummy.m in Sources */,
+				9998A5467D72B65B9B49CB6355F9E56B /* RNCryptor.swift in Sources */,
+				0FF0E22AFC6C5FEF79D49C28FD4EAE98 /* RNCryptor-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F51C9227C1B82DDAFE9C90628C1E5D28 /* Sources */ = {
+		8594FA364B849C4230715EDA151AC524 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84ED2B8B861E4FDF8B7A287A2F381F19 /* Pods-LoginEncryption-LoginEncryptionUITests-dummy.m in Sources */,
+				3172BC1BCB20655D5C3B12FF6AE169AC /* Pods-LoginEncryption-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF2075DF935ECBD1DB4512D7D4A2D8A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFE3EC7C532794315EB336FACA0C1408 /* Pods-LoginEncryption-LoginEncryptionUITests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		F34449980C38B003437F9705F211EABC /* PBXTargetDependency */ = {
+		0F8F8487FA7552815D0BD1AC02980046 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-LoginEncryption";
 			target = 4D66D4E340156A9F3D561E2E40F95A32 /* Pods-LoginEncryption */;
-			targetProxy = B330F77E943A4669CCAD9394296495C9 /* PBXContainerItemProxy */;
+			targetProxy = E19CF2262EDD5D1137E1206F4EB89E67 /* PBXContainerItemProxy */;
+		};
+		1728F4F363562E5042EE41E5540C4CBB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RNCryptor;
+			target = 05CCA2AD142519DF6FED0979BACBC149 /* RNCryptor */;
+			targetProxy = BB670954F68E40BB9054349CB73D3E49 /* PBXContainerItemProxy */;
+		};
+		5BE277F0D49081F6C6622774D2CEFC8A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RNCryptor;
+			target = 05CCA2AD142519DF6FED0979BACBC149 /* RNCryptor */;
+			targetProxy = 46517E02F193025BDF2EADC005FC144E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1CF0D683392D6AE25B145B64C63E0D7A /* Release */ = {
+		0DB17E299F3B893ADEE2AFEA365B3717 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D381FBAECC14F1248F08BF53270EAFD0 /* Pods-LoginEncryption-LoginEncryptionUITests.release.xcconfig */;
+			baseConfigurationReference = A11BC8E18F7BF884B35E2150DC5F918B /* Pods-LoginEncryption.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -371,7 +502,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-LoginEncryption-LoginEncryptionUITests/Pods-LoginEncryption-LoginEncryptionUITests-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-LoginEncryption/Pods-LoginEncryption-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -380,7 +511,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-LoginEncryption-LoginEncryptionUITests/Pods-LoginEncryption-LoginEncryptionUITests.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-LoginEncryption/Pods-LoginEncryption.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -389,11 +520,10 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		446BA1B9A1F1F2F95D04E5F82EB1B0F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -461,9 +591,9 @@
 			};
 			name = Debug;
 		};
-		4F4750D14ED9FB9315A0142582EC6A20 /* Debug */ = {
+		53021739B491C1CC0C09C9FDFA953C8B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 48A60FCCBD29ECA3E2B4BE98C10E51D3 /* Pods-LoginEncryption-LoginEncryptionUITests.debug.xcconfig */;
+			baseConfigurationReference = 5695F9F4589872E5C5F5CC24E4596766 /* Pods-LoginEncryption-LoginEncryptionUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -485,43 +615,6 @@
 				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-LoginEncryption-LoginEncryptionUITests/Pods-LoginEncryption-LoginEncryptionUITests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		50043A44A7EB2094D7CE0E4382EDBDD5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 80E5A729E4E3405944F49E07DEE8152F /* Pods-LoginEncryption.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-LoginEncryption/Pods-LoginEncryption-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-LoginEncryption/Pods-LoginEncryption.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -598,9 +691,47 @@
 			};
 			name = Release;
 		};
+		5DF1606008DE6510BF86C709B650E9E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C90F1C16B45B4B613B1B9762C0AC346E /* Pods-LoginEncryption.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-LoginEncryption/Pods-LoginEncryption-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LoginEncryption/Pods-LoginEncryption.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		6A7EE6ECBC0D387153B9E03AE0B31CE3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5C155E3BCA15463865A7D19550EB8692 /* Pods-LoginEncryptionTests.release.xcconfig */;
+			baseConfigurationReference = 263923B255D3EC9096FA77D969E889A0 /* Pods-LoginEncryptionTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -636,9 +767,78 @@
 			};
 			name = Release;
 		};
-		CC40B6954DE5C3B6738F62FE06BF94BE /* Debug */ = {
+		D6B53D853DB4B628F650AA7AE50B0AAC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C13D0F041EB30EE76FD31A947E4C0F13 /* Pods-LoginEncryption.debug.xcconfig */;
+			baseConfigurationReference = 18C5C8FB225B22DAAAFE544F04F1054A /* RNCryptor.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/RNCryptor/RNCryptor-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RNCryptor/RNCryptor-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/RNCryptor/RNCryptor.modulemap";
+				PRODUCT_MODULE_NAME = RNCryptor;
+				PRODUCT_NAME = RNCryptor;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D8E3B16E6117FAFEB04462C26051DDDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 534282BE88C9BF0BA2ED74BA7130AEA3 /* RNCryptor.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/RNCryptor/RNCryptor-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RNCryptor/RNCryptor-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/RNCryptor/RNCryptor.modulemap";
+				PRODUCT_MODULE_NAME = RNCryptor;
+				PRODUCT_NAME = RNCryptor;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E8225CA3A9AF6110DB2671D1F868AF53 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05AEFAE5FED3E6A6D3F1EC20C4341FFE /* Pods-LoginEncryption-LoginEncryptionUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -650,7 +850,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-LoginEncryption/Pods-LoginEncryption-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-LoginEncryption-LoginEncryptionUITests/Pods-LoginEncryption-LoginEncryptionUITests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -659,7 +859,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-LoginEncryption/Pods-LoginEncryption.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-LoginEncryption-LoginEncryptionUITests/Pods-LoginEncryption-LoginEncryptionUITests.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -675,7 +875,7 @@
 		};
 		FD9D68A1CE91AA6FF4991B4A7E399109 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 10EA9BDA70D47E350C496DA0ED089468 /* Pods-LoginEncryptionTests.debug.xcconfig */;
+			baseConfigurationReference = 9765B7B3CFA1942E9A017E1A75A84290 /* Pods-LoginEncryptionTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -713,6 +913,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1B300D8B511853425712CC6DAE52E171 /* Build configuration list for PBXNativeTarget "RNCryptor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8E3B16E6117FAFEB04462C26051DDDE /* Debug */,
+				D6B53D853DB4B628F650AA7AE50B0AAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		28E5CD0AF77333D4E9AFE36D26D6073F /* Build configuration list for PBXNativeTarget "Pods-LoginEncryption-LoginEncryptionUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8225CA3A9AF6110DB2671D1F868AF53 /* Debug */,
+				53021739B491C1CC0C09C9FDFA953C8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		3CEBE9B94640E7A6A7A8198C2BC3FF39 /* Build configuration list for PBXNativeTarget "Pods-LoginEncryptionTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -731,20 +949,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5D65B00A1C6918DF88D112873CE53CF7 /* Build configuration list for PBXNativeTarget "Pods-LoginEncryption" */ = {
+		7405B575972FD184DB49CAB81F3344FB /* Build configuration list for PBXNativeTarget "Pods-LoginEncryption" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CC40B6954DE5C3B6738F62FE06BF94BE /* Debug */,
-				50043A44A7EB2094D7CE0E4382EDBDD5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		99BA9FBB0CD3335F91178C42E73A1A4A /* Build configuration list for PBXNativeTarget "Pods-LoginEncryption-LoginEncryptionUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4F4750D14ED9FB9315A0142582EC6A20 /* Debug */,
-				1CF0D683392D6AE25B145B64C63E0D7A /* Release */,
+				0DB17E299F3B893ADEE2AFEA365B3717 /* Debug */,
+				5DF1606008DE6510BF86C709B650E9E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
