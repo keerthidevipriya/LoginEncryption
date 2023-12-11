@@ -11,6 +11,7 @@ import RNCryptor
 
 class LoginVC: UIViewController {
     var defaults = UserDefaults.standard
+    var encryptedPswd: String = String()
     
     enum Constant {
         static let margin: CGFloat = 16
@@ -47,7 +48,7 @@ class LoginVC: UIViewController {
         textField.textColor = .gray
         textField.isSecureTextEntry = true
         textField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
-        textField.addTarget(self, action: #selector(saveDetails), for: .editingChanged)
+        // textField.addTarget(self, action: #selector(saveDetails), for: .editingChanged)
         return textField
     }()
     
@@ -78,15 +79,9 @@ class LoginVC: UIViewController {
         return btn
     }()
     
-    lazy var dataLbl: UILabel = {
-        var lbl = UILabel()
-        lbl.translatesAutoresizingMaskIntoConstraints = false
-        lbl.font = UIFont.systemFont(ofSize: 16)
-        return lbl
-    }()
-    
     static func makeViewController() -> LoginVC {
         let vc = LoginVC()
+        vc.encryptedPswd = Utility.decryptData(vc.defaults.string(forKey: Keys.password.rawValue) ?? String())
         return vc
     }
 
@@ -99,7 +94,7 @@ class LoginVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        pswdTextField.addTarget(self, action: #selector(saveDetails), for: .editingChanged)
+        // pswdTextField.addTarget(self, action: #selector(saveDetails), for: .editingChanged)
     }
     
     func configure() {
@@ -163,6 +158,7 @@ extension LoginVC {
         handleNotification()
         if let pswd = pswdTextField.text, !pswd.isEmpty {
             Utility.encryptData(pswd, completion: { encryptedPswd in
+                self.encryptedPswd = encryptedPswd
                 self.saveDetails()
                 self.navigateToHomeVC(encryptedPswd)
             })
@@ -179,7 +175,9 @@ extension LoginVC {
     }
     
     func loadData() {
-        pswdTextField.text = defaults.string(forKey: Keys.password.rawValue)
+        if let data = defaults.string(forKey: Keys.password.rawValue) {
+            pswdTextField.text = Utility.decryptData(data)
+        }
         biometricSwitch.isOn = defaults.bool(forKey: Keys.biometric.rawValue)
         /*if biometricSwitch.isOn {
             self.submitTapped()
@@ -187,7 +185,7 @@ extension LoginVC {
     }
     
     @objc func saveDetails() {
-        defaults.set(pswdTextField.text!, forKey: Keys.password.rawValue)
+        defaults.set(encryptedPswd, forKey: Keys.password.rawValue)
         defaults.set(biometricSwitch.isOn, forKey: Keys.biometric.rawValue)
     }
     
