@@ -29,7 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0544D7F18F39CDD3430E8B073D9AD449 /* Pods-LoginEncryption */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-LoginEncryption"; path = Pods_LoginEncryption.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0544D7F18F39CDD3430E8B073D9AD449 /* Pods_LoginEncryption.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoginEncryption.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		054D549126DDB06C2BD9C69F2FC40AF9 /* Pods-LoginEncryption-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LoginEncryption-acknowledgements.markdown"; sourceTree = "<group>"; };
 		0B5BFCE9631B387B1B57BF86990BDB11 /* Pods-LoginEncryption-LoginEncryptionUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LoginEncryption-LoginEncryptionUITests-umbrella.h"; sourceTree = "<group>"; };
 		10EA9BDA70D47E350C496DA0ED089468 /* Pods-LoginEncryptionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LoginEncryptionTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -47,7 +47,7 @@
 		7A9E089863A1760250B772147A61F807 /* Pods-LoginEncryption-LoginEncryptionUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LoginEncryption-LoginEncryptionUITests-Info.plist"; sourceTree = "<group>"; };
 		80E5A729E4E3405944F49E07DEE8152F /* Pods-LoginEncryption.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LoginEncryption.release.xcconfig"; sourceTree = "<group>"; };
 		907910A02B5B2A2F81EB5C5D72AFE314 /* Pods-LoginEncryption.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LoginEncryption.modulemap"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DB7A5B95691162A2CF247AB559DC340 /* Pods-LoginEncryptionTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LoginEncryptionTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		AF9B86270DD376EB20B00963AD6584B4 /* Pods-LoginEncryption-LoginEncryptionUITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-LoginEncryption-LoginEncryptionUITests"; path = Pods_LoginEncryption_LoginEncryptionUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCE563F0E77116F9B90AF1A512ED0CE4 /* Pods-LoginEncryption-LoginEncryptionUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LoginEncryption-LoginEncryptionUITests.modulemap"; sourceTree = "<group>"; };
@@ -99,7 +99,7 @@
 		91CEA3BD241A47D793695A80A11F56DE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0544D7F18F39CDD3430E8B073D9AD449 /* Pods-LoginEncryption */,
+				0544D7F18F39CDD3430E8B073D9AD449 /* Pods_LoginEncryption.framework */,
 				AF9B86270DD376EB20B00963AD6584B4 /* Pods-LoginEncryption-LoginEncryptionUITests */,
 				E953F982D3648189DF95F0F8A7BFA9CC /* Pods-LoginEncryptionTests */,
 			);
@@ -227,7 +227,7 @@
 			);
 			name = "Pods-LoginEncryption";
 			productName = Pods_LoginEncryption;
-			productReference = 0544D7F18F39CDD3430E8B073D9AD449 /* Pods-LoginEncryption */;
+			productReference = 0544D7F18F39CDD3430E8B073D9AD449 /* Pods_LoginEncryption.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		921BAE15D7240C1AE2FF6D8FA29B7226 /* Pods-LoginEncryptionTests */ = {
