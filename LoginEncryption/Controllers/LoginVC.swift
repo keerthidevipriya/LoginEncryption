@@ -13,6 +13,7 @@ class LoginVC: UIViewController {
     
     enum Constant {
         static let margin: CGFloat = 16
+        static let btnWidth: CGFloat = 64
     }
     enum Keys: String {
         case password
@@ -127,6 +128,7 @@ class LoginVC: UIViewController {
             pswdTextField.topAnchor.constraint(equalTo: titleLbl.bottomAnchor, constant: Constant.margin),
             
             submitBtn.centerXAnchor.constraint(equalTo: baseView.centerXAnchor),
+            submitBtn.widthAnchor.constraint(equalToConstant: Constant.btnWidth),
             submitBtn.topAnchor.constraint(equalTo: pswdTextField.bottomAnchor, constant: Constant.margin),
             
             biometricSwitch.centerXAnchor.constraint(equalTo: baseView.centerXAnchor),
@@ -134,6 +136,7 @@ class LoginVC: UIViewController {
             
             clearBtn.centerXAnchor.constraint(equalTo: baseView.centerXAnchor),
             clearBtn.topAnchor.constraint(equalTo: biometricSwitch.bottomAnchor, constant: Constant.margin),
+            clearBtn.widthAnchor.constraint(equalToConstant: Constant.btnWidth)
         ])
     }
     
