@@ -6,6 +6,7 @@ target 'LoginEncryption' do
   use_frameworks!
 
   # Pods for LoginEncryption
+  pod 'RNCryptor', '~> 5.0'
 
   target 'LoginEncryptionTests' do
     inherit! :search_paths
