@@ -8,6 +8,6 @@
 import Foundation
 
 public protocol LoginValidation {
-    func makeTextEncrypted()
-    func getDecryptedString()
+    func makeEncryptData(_ pswd: String, completion: (String) -> Void)
+    func getDecryptData(_ encryptedPasswordText: String) -> String
 }

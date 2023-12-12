@@ -1,15 +1,14 @@
 //
 //  LoginVC.swift
-//  LoginEncryption
+//  LoginModule
 //
-//  Created by Keerthi Devipriya(kdp) on 09/12/23.
+//  Created by Keerthi Devipriya(kdp) on 12/12/23.
 //
 
-import LocalAuthentication
 import UIKit
-import LoginModule
+import LocalAuthentication
 
-class LoginVCNew: UIViewController {
+public class LoginVC: UIViewController {
     var defaults = UserDefaults.standard
     var encryptedPswd: String = String()
     var validations: LoginValidation?
@@ -80,21 +79,22 @@ class LoginVCNew: UIViewController {
         return btn
     }()
     
-    static func makeViewController(validations: LoginValidation?) -> LoginVCNew {
-        let vc = LoginVCNew()
-        vc.encryptedPswd = Utility.decryptData(vc.defaults.string(forKey: Keys.password.rawValue) ?? String())
+    public static func makeViewController(validations: LoginValidation?) -> LoginVC {
+        let vc = LoginVC()
         vc.validations = validations
+        vc.encryptedPswd = validations?.getDecryptData(vc.defaults.string(forKey: Keys.password.rawValue) ?? String()) ?? String()
+        //Utility.decryptData(vc.defaults.string(forKey: Keys.password.rawValue) ?? String())
         return vc
     }
 
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Login"
         loadData()
         configure()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // pswdTextField.addTarget(self, action: #selector(saveDetails), for: .editingChanged)
     }
@@ -155,11 +155,11 @@ class LoginVCNew: UIViewController {
     }
 }
 
-extension LoginVCNew {
+extension LoginVC {
     @objc func submitTapped() {
         handleNotification()
         if let pswd = pswdTextField.text, !pswd.isEmpty {
-            Utility.encryptData(pswd, completion: { encryptedPswd in
+            validations?.makeEncryptData(pswd, completion: { encryptedPswd in
                 self.encryptedPswd = encryptedPswd
                 self.saveDetails()
                 self.navigateToHomeVC(encryptedPswd)
@@ -178,7 +178,7 @@ extension LoginVCNew {
     
     func loadData() {
         if let data = defaults.string(forKey: Keys.password.rawValue) {
-            pswdTextField.text = Utility.decryptData(data)
+            pswdTextField.text = validations?.getDecryptData(data)
         }
         biometricSwitch.isOn = defaults.bool(forKey: Keys.biometric.rawValue)
         /*if biometricSwitch.isOn {
@@ -252,8 +252,8 @@ extension LoginVCNew {
     }
     
     func navigateToHomeVC(_ encryptedPswd: String) {
-        let vc = HomeVC.makeViewController(encryptedPswd: encryptedPswd)
-        self.navigationController?.pushViewController(vc, animated: true)
+        /*let vc = HomeVC.makeViewController(encryptedPswd: encryptedPswd)
+        self.navigationController?.pushViewController(vc, animated: true)*/
     }
     
     func handleNotification() {

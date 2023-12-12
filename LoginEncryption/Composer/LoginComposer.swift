@@ -17,11 +17,11 @@ final class LoginComposer {
 }
 
 class LoginValidations: LoginModule.LoginValidation {
-    func makeTextEncrypted() {
-        print("text is encrypted--")
+    func makeEncryptData(_ pswd: String, completion: (String) -> Void) {
+        Utility.encryptData(pswd, completion: completion)
     }
     
-    func getDecryptedString() {
-        print("text is decrypted--")
+    func getDecryptData(_ encryptedPasswordText: String) -> String {
+        return Utility.decryptData(encryptedPasswordText)
     }
 }
