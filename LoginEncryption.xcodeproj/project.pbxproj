@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5618A1102B2772FD00FC0892 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5618A10F2B2772FD00FC0892 /* Utility.swift */; };
+		5618A13A2B286A3000FC0892 /* LoginModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5618A1392B286A3000FC0892 /* LoginModule.framework */; };
 		56D202F62B24BBF10020E1A3 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D202F52B24BBF10020E1A3 /* LoginVC.swift */; };
 		56D202F92B24BCCB0020E1A3 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D202F82B24BCCB0020E1A3 /* HomeVC.swift */; };
 		56F2AE832B232FDC00A3298E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F2AE822B232FDC00A3298E /* AppDelegate.swift */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		5618A10F2B2772FD00FC0892 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		5618A1392B286A3000FC0892 /* LoginModule.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LoginModule.framework; sourceTree = "<group>"; };
 		56D202F52B24BBF10020E1A3 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		56D202F82B24BCCB0020E1A3 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		56F2AE7F2B232FDC00A3298E /* LoginEncryption.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginEncryption.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5618A13A2B286A3000FC0892 /* LoginModule.framework in Frameworks */,
 				8CEDAB55C8C8A577332CFEA4 /* Pods_LoginEncryption.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -164,6 +167,7 @@
 		6BD2C893A64B022900D8846B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5618A1392B286A3000FC0892 /* LoginModule.framework */,
 				93CE6CB327FC92560ECE7BAD /* Pods_LoginEncryption.framework */,
 				AF595DEEF22B035160104111 /* Pods_LoginEncryption_LoginEncryptionUITests.framework */,
 				97F33FBC8D380FB5C900D551 /* Pods_LoginEncryptionTests.framework */,
@@ -606,6 +610,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LoginEncryption/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -634,6 +642,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LoginEncryption/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

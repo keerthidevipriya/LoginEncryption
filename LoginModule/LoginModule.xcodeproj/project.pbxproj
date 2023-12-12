@@ -29,6 +29,7 @@
 		5618A11F2B28688E00FC0892 /* LoginModule.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = LoginModule.docc; sourceTree = "<group>"; };
 		5618A1252B28688E00FC0892 /* LoginModuleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginModuleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5618A12A2B28688E00FC0892 /* LoginModuleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModuleTests.swift; sourceTree = "<group>"; };
+		5618A1362B28690E00FC0892 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +57,7 @@
 				5618A11D2B28688E00FC0892 /* LoginModule */,
 				5618A1292B28688E00FC0892 /* LoginModuleTests */,
 				5618A11C2B28688E00FC0892 /* Products */,
+				5618A1352B28690E00FC0892 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,6 +85,14 @@
 				5618A12A2B28688E00FC0892 /* LoginModuleTests.swift */,
 			);
 			path = LoginModuleTests;
+			sourceTree = "<group>";
+		};
+		5618A1352B28690E00FC0892 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5618A1362B28690E00FC0892 /* Accelerate.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
