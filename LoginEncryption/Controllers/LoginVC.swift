@@ -8,6 +8,7 @@
 import LocalAuthentication
 import UIKit
 import RNCryptor
+import LoginModule
 
 class LoginVC: UIViewController {
     var defaults = UserDefaults.standard

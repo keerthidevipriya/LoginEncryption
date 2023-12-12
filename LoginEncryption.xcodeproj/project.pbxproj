@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5618A1102B2772FD00FC0892 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5618A10F2B2772FD00FC0892 /* Utility.swift */; };
-		5618A13A2B286A3000FC0892 /* LoginModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5618A1392B286A3000FC0892 /* LoginModule.framework */; };
+		5618A13B2B286AD800FC0892 /* LoginModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5618A1392B286A3000FC0892 /* LoginModule.framework */; };
+		5618A13C2B286AD800FC0892 /* LoginModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5618A1392B286A3000FC0892 /* LoginModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		56D202F62B24BBF10020E1A3 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D202F52B24BBF10020E1A3 /* LoginVC.swift */; };
 		56D202F92B24BCCB0020E1A3 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D202F82B24BCCB0020E1A3 /* HomeVC.swift */; };
 		56F2AE832B232FDC00A3298E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F2AE822B232FDC00A3298E /* AppDelegate.swift */; };
@@ -41,6 +42,20 @@
 			remoteInfo = LoginEncryption;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5618A13D2B286AD800FC0892 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5618A13C2B286AD800FC0892 /* LoginModule.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5618A10F2B2772FD00FC0892 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
@@ -76,7 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5618A13A2B286A3000FC0892 /* LoginModule.framework in Frameworks */,
+				5618A13B2B286AD800FC0892 /* LoginModule.framework in Frameworks */,
 				8CEDAB55C8C8A577332CFEA4 /* Pods_LoginEncryption.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -200,6 +215,7 @@
 				56F2AE7C2B232FDC00A3298E /* Frameworks */,
 				56F2AE7D2B232FDC00A3298E /* Resources */,
 				F1B8375DC9BC35E2B3970124 /* [CP] Embed Pods Frameworks */,
+				5618A13D2B286AD800FC0892 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
