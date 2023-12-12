@@ -11,6 +11,7 @@
 		5618A1262B28688E00FC0892 /* LoginModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5618A11B2B28688E00FC0892 /* LoginModule.framework */; };
 		5618A12B2B28688E00FC0892 /* LoginModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5618A12A2B28688E00FC0892 /* LoginModuleTests.swift */; };
 		5618A12C2B28688E00FC0892 /* LoginModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 5618A11E2B28688E00FC0892 /* LoginModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5618A1442B286C9F00FC0892 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5618A1432B286C9F00FC0892 /* BaseViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +31,7 @@
 		5618A1252B28688E00FC0892 /* LoginModuleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginModuleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5618A12A2B28688E00FC0892 /* LoginModuleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModuleTests.swift; sourceTree = "<group>"; };
 		5618A1362B28690E00FC0892 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = DEVELOPER_DIR; };
+		5618A1432B286C9F00FC0892 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,8 @@
 		5618A11D2B28688E00FC0892 /* LoginModule */ = {
 			isa = PBXGroup;
 			children = (
+				5618A1422B286C8900FC0892 /* LoginBaseViewModel */,
+				5618A1412B286C7300FC0892 /* Controllers */,
 				5618A11E2B28688E00FC0892 /* LoginModule.h */,
 				5618A11F2B28688E00FC0892 /* LoginModule.docc */,
 			);
@@ -93,6 +97,21 @@
 				5618A1362B28690E00FC0892 /* Accelerate.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5618A1412B286C7300FC0892 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5618A1422B286C8900FC0892 /* LoginBaseViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5618A1432B286C9F00FC0892 /* BaseViewModel.swift */,
+			);
+			path = LoginBaseViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5618A1202B28688E00FC0892 /* LoginModule.docc in Sources */,
+				5618A1442B286C9F00FC0892 /* BaseViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,6 +424,7 @@
 		5618A1332B28688E00FC0892 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -419,6 +440,7 @@
 		5618A1342B28688E00FC0892 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;

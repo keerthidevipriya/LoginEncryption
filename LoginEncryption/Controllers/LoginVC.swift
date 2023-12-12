@@ -13,6 +13,7 @@ import LoginModule
 class LoginVC: UIViewController {
     var defaults = UserDefaults.standard
     var encryptedPswd: String = String()
+    var validations: LoginValidation?
     
     enum Constant {
         static let margin: CGFloat = 16
@@ -80,9 +81,10 @@ class LoginVC: UIViewController {
         return btn
     }()
     
-    static func makeViewController() -> LoginVC {
+    static func makeViewController(validations: LoginValidation?) -> LoginVC {
         let vc = LoginVC()
         vc.encryptedPswd = Utility.decryptData(vc.defaults.string(forKey: Keys.password.rawValue) ?? String())
+        vc.validations = validations
         return vc
     }
 
