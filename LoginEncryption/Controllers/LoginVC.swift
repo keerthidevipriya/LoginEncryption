@@ -179,9 +179,9 @@ extension LoginVC {
             pswdTextField.text = Utility.decryptData(data)
         }
         biometricSwitch.isOn = defaults.bool(forKey: Keys.biometric.rawValue)
-        /*if biometricSwitch.isOn {
+        if biometricSwitch.isOn {
             self.submitTapped()
-        }*/
+        }
     }
     
     @objc func saveDetails() {
