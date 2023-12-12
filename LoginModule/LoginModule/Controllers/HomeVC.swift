@@ -1,15 +1,15 @@
 //
 //  HomeVC.swift
-//  LoginEncryption
+//  LoginModule
 //
-//  Created by Keerthi Devipriya(kdp) on 09/12/23.
+//  Created by Keerthi Devipriya(kdp) on 12/12/23.
 //
 
 import UIKit
 
-class HomeVCNew: UIViewController {
-    
+class HomeVC: UIViewController {
     var encryptedPswd: String = String()
+    var validations: LoginValidation?
     
     enum Constant {
         static let margin: CGFloat = 16
@@ -42,8 +42,12 @@ class HomeVCNew: UIViewController {
         self.configure()
     }
     
-    static func makeViewController(encryptedPswd: String) -> HomeVCNew {
-        let vc = HomeVCNew()
+    static func makeViewController(
+        encryptedPswd: String,
+        validations: LoginValidation?
+    ) -> HomeVC {
+        let vc = HomeVC()
+        vc.validations = validations
         vc.encryptedPswd = encryptedPswd
         return vc
     }
@@ -57,7 +61,8 @@ class HomeVCNew: UIViewController {
     
     func setUpData() {
         titleLbl.text = "My details are as follows"
-        detailsLbl.text = Utility.decryptData(self.encryptedPswd)
+        detailsLbl.text = validations?.getDecryptData(self.encryptedPswd)
+        // Utility.decryptData(self.encryptedPswd)
     }
     
     func configureView() {
@@ -86,6 +91,4 @@ class HomeVCNew: UIViewController {
         baseView.backgroundColor = .white
         self.view.backgroundColor = .white
     }
-    
-    
 }

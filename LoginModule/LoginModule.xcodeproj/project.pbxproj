@@ -13,6 +13,7 @@
 		5618A12C2B28688E00FC0892 /* LoginModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 5618A11E2B28688E00FC0892 /* LoginModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5618A1442B286C9F00FC0892 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5618A1432B286C9F00FC0892 /* BaseViewModel.swift */; };
 		5618A1462B28718400FC0892 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5618A1452B28718400FC0892 /* LoginVC.swift */; };
+		5618A1482B28748200FC0892 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5618A1472B28748200FC0892 /* HomeVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 		5618A1362B28690E00FC0892 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = DEVELOPER_DIR; };
 		5618A1432B286C9F00FC0892 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		5618A1452B28718400FC0892 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		5618A1472B28748200FC0892 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				5618A1452B28718400FC0892 /* LoginVC.swift */,
+				5618A1472B28748200FC0892 /* HomeVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5618A1202B28688E00FC0892 /* LoginModule.docc in Sources */,
+				5618A1482B28748200FC0892 /* HomeVC.swift in Sources */,
 				5618A1442B286C9F00FC0892 /* BaseViewModel.swift in Sources */,
 				5618A1462B28718400FC0892 /* LoginVC.swift in Sources */,
 			);

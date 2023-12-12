@@ -252,8 +252,11 @@ extension LoginVC {
     }
     
     func navigateToHomeVC(_ encryptedPswd: String) {
-        /*let vc = HomeVC.makeViewController(encryptedPswd: encryptedPswd)
-        self.navigationController?.pushViewController(vc, animated: true)*/
+        let vc = HomeVC.makeViewController(
+            encryptedPswd: encryptedPswd,
+            validations: validations
+        )
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func handleNotification() {
