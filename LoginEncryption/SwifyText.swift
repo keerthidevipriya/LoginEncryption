@@ -16,7 +16,7 @@ enum RSAError: Error {
 class RSAEncryption {
     static let shared = RSAEncryption()
     
-    func generateRSAKeyPair(keySize: Int = 2048, tag: String = "") throws -> (privateKey: SecKey?, publicKey: SecKey?) {
+    func generateRSAKeyPair(keySize: Int = 2048, tag: String = Bundle.main.bundlePath) throws -> (privateKey: SecKey?, publicKey: SecKey?) {
         guard let tagData = tag.data(using: .utf8) else {
             throw RSAError.stringToDataConversionFailed
         }
@@ -27,12 +27,12 @@ class RSAEncryption {
             kSecAttrKeySizeInBits: keySize,
             kSecPrivateKeyAttrs: [
                 kSecAttrIsPermanent: isPermanent,
-                //kSecAttrApplicationTag: tagData,
+                kSecAttrApplicationTag: tagData,
                 // kSecAttrKeyType: kSecAttrKeyTypeRSA // Add this line
             ],
             kSecPublicKeyAttrs: [
                 kSecAttrIsPermanent: isPermanent,
-                //kSecAttrApplicationTag: tagData,
+                kSecAttrApplicationTag: tagData,
                 // kSecAttrKeyType: kSecAttrKeyTypeRSA // Add this line
             ]
         ]

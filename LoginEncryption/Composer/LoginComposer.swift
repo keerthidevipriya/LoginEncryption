@@ -25,25 +25,79 @@ class LoginValidations: LoginModule.LoginValidation {
     }
     
     func getDecryptData(_ encryptedPasswordText: String) -> String {
-        //var error: Unmanaged<CFError>? = nil
-        guard let publicKey = try? rsa.generateRSAKeyPair(keySize: 2048).publicKey,
-                  let privateKey = try? rsa.generateRSAKeyPair().privateKey else { return String() }
-        /*guard let cipherText = SecKeyCreateEncryptedData(publicKey,
-                                                         .rsaEncryptionOAEPSHA1,
-                                                         encryptedPasswordText as CFData,
+        let tag = Bundle.main.bundlePath.data(using: .utf8)!
+        let attributes: [String: Any] =
+        [
+            kSecAttrKeyType as String: kSecAttrKeyTypeRSA,
+            kSecAttrKeySizeInBits as String: 2048,
+            kSecPrivateKeyAttrs as String:
+                [
+                    kSecAttrIsPermanent as String: true,
+                    kSecAttrApplicationTag as String: tag
+                ]
+        ]
+        
+        var error: Unmanaged<CFError>?
+        guard let privateKey = SecKeyCreateRandomKey(attributes as CFDictionary, &error) else {
+            return String()
+            // throw RSAError.keyGenerationFailed(error: error?.takeRetainedValue() ?? nil) //error!.takeRetainedValue() as Error
+        }
+        guard let publicKey = SecKeyCopyPublicKey(privateKey) else { return String() }
+        let algorithm: SecKeyAlgorithm = .rsaEncryptionOAEPSHA512
+        
+        guard SecKeyIsAlgorithmSupported(publicKey, .encrypt, algorithm) else {
+            return String()
+            // throw &error
+        }
+        
+        guard (encryptedPasswordText.count < (SecKeyGetBlockSize(publicKey)-130)) else {
+            return String()
+            // throw &error
+        }
+        
+        let plainText = encryptedPasswordText.data(using: .utf8)!
+        guard let cipherText = SecKeyCreateEncryptedData(publicKey,
+                                                         algorithm,
+                                                         plainText as CFData,
                                                          &error) as Data? else {
-                                                            throw error!.takeRetainedValue() as Error
-        }*/
+            return String()
+                           //                                 throw error!.takeRetainedValue() as Error
+        }
+        guard SecKeyIsAlgorithmSupported(privateKey, .decrypt, algorithm) else {
+            return String()
+            // throw &error
+        }
+        
+        guard cipherText.count == SecKeyGetBlockSize(privateKey) else {
+            return String()
+            // throw &error
+        }
+        
+        guard let clearText = SecKeyCreateDecryptedData(privateKey,
+                                                        algorithm,
+                                                        cipherText as CFData,
+                                                        &error) as Data? else {
+            return String()
+                                                           // throw error!.takeRetainedValue() as Error
+        }
+        
+        guard let decryptedString = String(data: clearText, encoding: .utf8) else { return String() }
+        print("Private key can encrypt/decrypt: ", SecKeyIsAlgorithmSupported(privateKey, .decrypt, algorithm))
+        print("pub key----\(publicKey)")
+        print("private key---\(privateKey)")
+        print("clearText---\(decryptedString)")
+        return decryptedString
+        /*guard let publicKey = try? rsa.generateRSAKeyPair(keySize: 2048, tag: Bundle.main.bundlePath).publicKey,
+              let privateKey = try? rsa.generateRSAKeyPair(keySize: 2048, tag: Bundle.main.bundlePath).privateKey else { return String() }
         guard let encrypted = rsa.encryptSec(data: encryptedPasswordText.data(using: .utf8)!, publicKey: publicKey) else {
             return String()
         }
         print("Pub: \n", publicKey.base64String())
         print("Priv: \n ", privateKey.base64String())
-        A.a(plainText: encryptedPasswordText, publicKey: publicKey, privateKey: privateKey)
         //return "dummy"
        guard let decrypted = rsa.decryptSec(data: encrypted, privateKey: privateKey) else { return "dummy" }
        return String(data: decrypted, encoding: .utf8) ?? String()
-        // return Utility.decryptData(encryptedPasswordText)
+        // return Utility.decryptData(encryptedPasswordText)*/
     }
 }
 
