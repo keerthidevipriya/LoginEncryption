@@ -35,8 +35,26 @@ class LoginValidations: LoginModule.LoginValidation {
         }
         print("Pub: \n", publicKey.base64String())
         print("Priv: \n ", privateKey.base64String())
+        A.a(plainText: encryptedPasswordText, publicKey: publicKey, privateKey: privateKey)
         guard let decrypted = rsa.decryptSec(data: encrypted, privateKey: privateKey) else { return "dummy" }
         return String(data: decrypted, encoding: .utf8) ?? String()
         // return Utility.decryptData(encryptedPasswordText)
+    }
+}
+
+
+class A  {
+    class func a(plainText: String, publicKey: SecKey, privateKey: SecKey) {
+        // Encrypt
+        let algo: SecKeyAlgorithm = .rsaEncryptionOAEPSHA512AESGCM
+        print("Public key can encrypt/decrypt: ", SecKeyIsAlgorithmSupported(publicKey, .encrypt, algo), SecKeyIsAlgorithmSupported(publicKey, .decrypt, algo))
+
+        var error: Unmanaged<CFError>? = nil
+        let cipherText = SecKeyCreateEncryptedData(publicKey, algo, plainText.data(using: .utf8)! as CFData, &error)
+        if (cipherText == nil) {
+            print(error)
+        }
+        
+        print("Private key can encrypt/decrypt: ", SecKeyIsAlgorithmSupported(privateKey, .encrypt, algo), SecKeyIsAlgorithmSupported(privateKey, .decrypt, algo))
     }
 }
