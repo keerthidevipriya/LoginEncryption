@@ -20,11 +20,59 @@ class LoginValidations: LoginModule.LoginValidation {
     let rsa = RSAEncryption.shared
     
     func makeEncryptData(_ pswd: String, completion: (String) -> Void) {
+        var ans = String()
+        let tag = Bundle.main.bundlePath.data(using: .utf8)!
+        let attributes: [String: Any] =
+        [
+            kSecAttrKeyType as String: kSecAttrKeyTypeRSA,
+            kSecAttrKeySizeInBits as String: 2048,
+            kSecPrivateKeyAttrs as String:
+                [
+                    kSecAttrIsPermanent as String: true,
+                    kSecAttrApplicationTag as String: tag
+                ]
+        ]
+        var error: Unmanaged<CFError>?
+        guard let privateKey = SecKeyCreateRandomKey(attributes as CFDictionary, &error) else {
+            completion(ans)
+            return
+        }
+        guard let publicKey = SecKeyCopyPublicKey(privateKey) else {
+            completion(ans)
+            return
+        }
+        let algorithm: SecKeyAlgorithm = .rsaEncryptionOAEPSHA512
+        
+        guard SecKeyIsAlgorithmSupported(publicKey, .encrypt, algorithm) else {
+            completion(ans)
+            return
+        }
+        guard (pswd.count < (SecKeyGetBlockSize(publicKey)-130)) else {
+            return
+        }
+        
+        let plainText = pswd.data(using: .utf8)!
+        guard let cipherText = SecKeyCreateEncryptedData(publicKey,
+                                                         algorithm,
+                                                         plainText as CFData,
+                                                         &error) as Data? else {
+            return
+        }
+        guard SecKeyIsAlgorithmSupported(privateKey, .decrypt, algorithm) else {
+            return
+        }
+        
+        guard cipherText.count == SecKeyGetBlockSize(privateKey) else {
+            return
+        }
+        
         completion(pswd)
         //Utility.encryptData(pswd, completion: completion)
     }
     
     func getDecryptData(_ encryptedPasswordText: String) -> String {
+        let algorithm: SecKeyAlgorithm = .rsaEncryptionOAEPSHA512
+
         let tag = Bundle.main.bundlePath.data(using: .utf8)!
         let attributes: [String: Any] =
         [
@@ -43,7 +91,6 @@ class LoginValidations: LoginModule.LoginValidation {
             // throw RSAError.keyGenerationFailed(error: error?.takeRetainedValue() ?? nil) //error!.takeRetainedValue() as Error
         }
         guard let publicKey = SecKeyCopyPublicKey(privateKey) else { return String() }
-        let algorithm: SecKeyAlgorithm = .rsaEncryptionOAEPSHA512
         
         guard SecKeyIsAlgorithmSupported(publicKey, .encrypt, algorithm) else {
             return String()
@@ -87,17 +134,6 @@ class LoginValidations: LoginModule.LoginValidation {
         print("private key---\(privateKey)")
         print("clearText---\(decryptedString)")
         return decryptedString
-        /*guard let publicKey = try? rsa.generateRSAKeyPair(keySize: 2048, tag: Bundle.main.bundlePath).publicKey,
-              let privateKey = try? rsa.generateRSAKeyPair(keySize: 2048, tag: Bundle.main.bundlePath).privateKey else { return String() }
-        guard let encrypted = rsa.encryptSec(data: encryptedPasswordText.data(using: .utf8)!, publicKey: publicKey) else {
-            return String()
-        }
-        print("Pub: \n", publicKey.base64String())
-        print("Priv: \n ", privateKey.base64String())
-        //return "dummy"
-       guard let decrypted = rsa.decryptSec(data: encrypted, privateKey: privateKey) else { return "dummy" }
-       return String(data: decrypted, encoding: .utf8) ?? String()
-        // return Utility.decryptData(encryptedPasswordText)*/
     }
 }
 
