@@ -25,19 +25,24 @@ class LoginValidations: LoginModule.LoginValidation {
     }
     
     func getDecryptData(_ encryptedPasswordText: String) -> String {
+        //var error: Unmanaged<CFError>? = nil
         guard let publicKey = try? rsa.generateRSAKeyPair(keySize: 2048).publicKey,
-                  let privateKey = try? rsa.generateRSAKeyPair().privateKey
-        else {
-            return String()
-        }
+                  let privateKey = try? rsa.generateRSAKeyPair().privateKey else { return String() }
+        /*guard let cipherText = SecKeyCreateEncryptedData(publicKey,
+                                                         .rsaEncryptionOAEPSHA1,
+                                                         encryptedPasswordText as CFData,
+                                                         &error) as Data? else {
+                                                            throw error!.takeRetainedValue() as Error
+        }*/
         guard let encrypted = rsa.encryptSec(data: encryptedPasswordText.data(using: .utf8)!, publicKey: publicKey) else {
             return String()
         }
         print("Pub: \n", publicKey.base64String())
         print("Priv: \n ", privateKey.base64String())
         A.a(plainText: encryptedPasswordText, publicKey: publicKey, privateKey: privateKey)
-        guard let decrypted = rsa.decryptSec(data: encrypted, privateKey: privateKey) else { return "dummy" }
-        return String(data: decrypted, encoding: .utf8) ?? String()
+        //return "dummy"
+       guard let decrypted = rsa.decryptSec(data: encrypted, privateKey: privateKey) else { return "dummy" }
+       return String(data: decrypted, encoding: .utf8) ?? String()
         // return Utility.decryptData(encryptedPasswordText)
     }
 }
@@ -54,7 +59,12 @@ class A  {
         if (cipherText == nil) {
             print(error)
         }
-        
         print("Private key can encrypt/decrypt: ", SecKeyIsAlgorithmSupported(privateKey, .encrypt, algo), SecKeyIsAlgorithmSupported(privateKey, .decrypt, algo))
+
+        let recovered = SecKeyCreateDecryptedData(privateKey, algo, cipherText!, &error)
+        if (recovered == nil) {
+            print(error)
+        }
+        print("decrypted text---\(recovered)")
     }
 }
