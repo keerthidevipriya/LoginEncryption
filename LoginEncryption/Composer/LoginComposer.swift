@@ -20,7 +20,6 @@ class LoginValidations: LoginModule.LoginValidation {
     let rsa = RSAEncryption.shared
     
     func makeEncryptData(_ pswd: String, completion: (String, Data) -> Void) {
-        let ans = String()
         let tag = Bundle.main.bundlePath.data(using: .utf8)!
         let attributes: [String: Any] =
         [
@@ -121,27 +120,5 @@ class LoginValidations: LoginModule.LoginValidation {
         print("private key---\(privateKey)")
         print("clearText---\(decryptedString)")
         return decryptedString
-    }
-}
-
-
-class A  {
-    class func a(plainText: String, publicKey: SecKey, privateKey: SecKey) {
-        // Encrypt
-        let algo: SecKeyAlgorithm = .rsaEncryptionOAEPSHA512AESGCM
-        print("Public key can encrypt/decrypt: ", SecKeyIsAlgorithmSupported(publicKey, .encrypt, algo), SecKeyIsAlgorithmSupported(publicKey, .decrypt, algo))
-
-        var error: Unmanaged<CFError>? = nil
-        let cipherText = SecKeyCreateEncryptedData(publicKey, algo, plainText.data(using: .utf8)! as CFData, &error)
-        if (cipherText == nil) {
-            print(error)
-        }
-        print("Private key can encrypt/decrypt: ", SecKeyIsAlgorithmSupported(privateKey, .encrypt, algo), SecKeyIsAlgorithmSupported(privateKey, .decrypt, algo))
-
-        let recovered = SecKeyCreateDecryptedData(privateKey, algo, cipherText!, &error)
-        if (recovered == nil) {
-            print(error)
-        }
-        print("decrypted text---\(recovered)")
     }
 }
