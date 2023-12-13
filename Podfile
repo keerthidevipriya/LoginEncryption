@@ -7,7 +7,6 @@ target 'LoginEncryption' do
 
   # Pods for LoginEncryption
   pod 'RNCryptor', '~> 5.0'
-  pod 'SwiftyRSA'
 
   target 'LoginEncryptionTests' do
     inherit! :search_paths

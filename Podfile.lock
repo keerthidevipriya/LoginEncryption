@@ -1,22 +1,16 @@
 PODS:
   - RNCryptor (5.1.0)
-  - SwiftyRSA (1.7.0):
-    - SwiftyRSA/ObjC (= 1.7.0)
-  - SwiftyRSA/ObjC (1.7.0)
 
 DEPENDENCIES:
   - RNCryptor (~> 5.0)
-  - SwiftyRSA
 
 SPEC REPOS:
   trunk:
     - RNCryptor
-    - SwiftyRSA
 
 SPEC CHECKSUMS:
   RNCryptor: a369134686cd2ad391323cc856b62e591193ba79
-  SwiftyRSA: 8c6dd1ea7db1b8dc4fb517a202f88bb1354bc2c6
 
-PODFILE CHECKSUM: 16185a9829ae19cd2d35fa347b2c8bb26fca1362
+PODFILE CHECKSUM: 9297b370e771e3050505ee4ff0b944d271db732f
 
 COCOAPODS: 1.14.3
