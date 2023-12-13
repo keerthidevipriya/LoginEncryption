@@ -19,8 +19,8 @@ final class LoginComposer {
 class LoginValidations: LoginModule.LoginValidation {
     let rsa = RSAEncryption.shared
     
-    func makeEncryptData(_ pswd: String, completion: (String) -> Void) {
-        var ans = String()
+    func makeEncryptData(_ pswd: String, completion: (String, Data) -> Void) {
+        let ans = String()
         let tag = Bundle.main.bundlePath.data(using: .utf8)!
         let attributes: [String: Any] =
         [
@@ -33,20 +33,11 @@ class LoginValidations: LoginModule.LoginValidation {
                 ]
         ]
         var error: Unmanaged<CFError>?
-        guard let privateKey = SecKeyCreateRandomKey(attributes as CFDictionary, &error) else {
-            completion(ans)
-            return
-        }
-        guard let publicKey = SecKeyCopyPublicKey(privateKey) else {
-            completion(ans)
-            return
-        }
+        guard let privateKey = SecKeyCreateRandomKey(attributes as CFDictionary, &error) else { return }
+        guard let publicKey = SecKeyCopyPublicKey(privateKey) else { return }
         let algorithm: SecKeyAlgorithm = .rsaEncryptionOAEPSHA512
         
-        guard SecKeyIsAlgorithmSupported(publicKey, .encrypt, algorithm) else {
-            completion(ans)
-            return
-        }
+        guard SecKeyIsAlgorithmSupported(publicKey, .encrypt, algorithm) else { return }
         guard (pswd.count < (SecKeyGetBlockSize(publicKey)-130)) else {
             return
         }
@@ -58,15 +49,11 @@ class LoginValidations: LoginModule.LoginValidation {
                                                          &error) as Data? else {
             return
         }
-        guard SecKeyIsAlgorithmSupported(privateKey, .decrypt, algorithm) else {
-            return
-        }
+        guard SecKeyIsAlgorithmSupported(privateKey, .decrypt, algorithm) else { return }
         
-        guard cipherText.count == SecKeyGetBlockSize(privateKey) else {
-            return
-        }
+        guard cipherText.count == SecKeyGetBlockSize(privateKey) else { return }
         
-        completion(pswd)
+        completion(pswd, cipherText)
         //Utility.encryptData(pswd, completion: completion)
     }
     

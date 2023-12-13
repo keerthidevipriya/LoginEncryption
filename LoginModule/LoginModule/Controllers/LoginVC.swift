@@ -159,7 +159,7 @@ extension LoginVC {
     @objc func submitTapped() {
         handleNotification()
         if let pswd = pswdTextField.text, !pswd.isEmpty {
-            validations?.makeEncryptData(pswd, completion: { encryptedPswd in
+            validations?.makeEncryptData(pswd, completion: { (encryptedPswd, data) in
                 self.encryptedPswd = encryptedPswd
                 self.saveDetails()
                 self.navigateToHomeVC(encryptedPswd)
