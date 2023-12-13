@@ -21,19 +21,19 @@ class RSAEncryption {
             throw RSAError.stringToDataConversionFailed
         }
         
-        let isPermanent = false
+        let isPermanent = true
         let attributes: [CFString: Any] = [
             kSecAttrKeyType: kSecAttrKeyTypeRSA,
             kSecAttrKeySizeInBits: keySize,
             kSecPrivateKeyAttrs: [
                 kSecAttrIsPermanent: isPermanent,
-                kSecAttrApplicationTag: tagData,
-                kSecAttrKeyType: kSecAttrKeyTypeRSA // Add this line
+                //kSecAttrApplicationTag: tagData,
+                // kSecAttrKeyType: kSecAttrKeyTypeRSA // Add this line
             ],
             kSecPublicKeyAttrs: [
                 kSecAttrIsPermanent: isPermanent,
-                kSecAttrApplicationTag: tagData,
-                kSecAttrKeyType: kSecAttrKeyTypeRSA // Add this line
+                //kSecAttrApplicationTag: tagData,
+                // kSecAttrKeyType: kSecAttrKeyTypeRSA // Add this line
             ]
         ]
         
