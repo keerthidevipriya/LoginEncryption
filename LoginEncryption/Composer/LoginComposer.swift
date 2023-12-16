@@ -96,6 +96,8 @@ class LoginValidations: LoginModule.LoginValidation {
             return String()
                            //                                 throw error!.takeRetainedValue() as Error
         }
+        displayToastMessage("Password is secured by two layer safety by encryption")
+
         guard SecKeyIsAlgorithmSupported(privateKey, .decrypt, algorithm) else {
             return String()
             // throw &error
@@ -119,6 +121,9 @@ class LoginValidations: LoginModule.LoginValidation {
         print("pub key----\(publicKey)")
         print("private key---\(privateKey)")
         print("clearText---\(decryptedString)")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
+            displayToastMessage("Password is decrypteddd")
+        }
         return decryptedString
     }
 }
