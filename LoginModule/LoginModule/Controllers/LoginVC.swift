@@ -59,6 +59,13 @@ public class LoginVC: UIViewController {
         return s
     }()
     
+    lazy var enableBiometricsLbl: UILabel = {
+        var lbl = UILabel()
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        lbl.font = UIFont.systemFont(ofSize: 10)
+        return lbl
+    }()
+    
     lazy var submitBtn: UIButton = {
         var btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
@@ -155,8 +162,10 @@ public class LoginVC: UIViewController {
     }
     
     func setUpData() {
-        titleLbl.text = "Welcome"
+        titleLbl.text = "Please enter your password"
+        enableBiometricsLbl.text = "Enable Biometrics"
         titleLbl.textColor = .black
+        enableBiometricsLbl.textColor = .black
         submitBtn.backgroundColor = .blue
         clearBtn.backgroundColor = .blue
     }
@@ -166,7 +175,8 @@ public class LoginVC: UIViewController {
         baseView.addSubview(pswdTextField)
         baseView.addSubview(submitBtn)
         baseView.addSubview(biometricSwitch)
-        baseView.addSubview(clearBtn)
+        baseView.addSubview(enableBiometricsLbl)
+        //baseView.addSubview(clearBtn)
         view.addSubview(baseView)
     }
     
@@ -191,9 +201,9 @@ public class LoginVC: UIViewController {
             biometricSwitch.centerXAnchor.constraint(equalTo: baseView.centerXAnchor),
             biometricSwitch.topAnchor.constraint(equalTo: submitBtn.bottomAnchor, constant: Constant.margin),
             
-            clearBtn.centerXAnchor.constraint(equalTo: baseView.centerXAnchor),
-            clearBtn.topAnchor.constraint(equalTo: biometricSwitch.bottomAnchor, constant: Constant.margin),
-            clearBtn.widthAnchor.constraint(equalToConstant: Constant.btnWidth)
+            enableBiometricsLbl.centerXAnchor.constraint(equalTo: baseView.centerXAnchor),
+            enableBiometricsLbl.topAnchor.constraint(equalTo: biometricSwitch.bottomAnchor, constant: 8)
+            //enableBiometricsLbl.widthAnchor.constraint(equalToConstant: Constant.btnWidth)
         ])
     }
     
