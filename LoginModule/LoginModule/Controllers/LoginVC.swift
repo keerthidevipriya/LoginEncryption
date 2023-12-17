@@ -112,8 +112,8 @@ public class LoginVC: UIViewController {
                 //statusLabel.text = String(format:"Interval %i Rest",workoutIntervalCount)
                 workoutIntervalCount -= 1
             }else{
+                workoutIntervalCount = 0
                 //statusLabel.text = String(format:"Interval %i Work Out",workoutIntervalCount)
-                
             }
             
         }
@@ -124,6 +124,7 @@ public class LoginVC: UIViewController {
         
         //set the notification
         UIApplication.shared.presentLocalNotificationNow(localNotification)
+        workoutIntervalCount = 0
     }
     
     public static func makeViewController(validations: LoginValidation?) -> LoginVC {
