@@ -260,14 +260,59 @@ extension LoginVC {
     }
     
     func handleNotification() {
-        let notification = UILocalNotification()
-        notification.alertAction = "Hello"
-        notification.alertBody = "Welcome to the app!"
+        let notif = LocalNotificationMethod()
+        notif.scheduleLocalNotification(
+            titleOfNotification: "Hello",
+            subtitleOfNotification: "Lets go to Login page",
+            messageOfNotification: "Please tap here",
+            soundOfNotification: String(),
+            dateOfNotification: "2023-12-17 03:57"
+        )
+        /*let notification = UILocalNotification()
+         notification.alertAction = "Hello"
+         notification.alertBody = "Welcome to the app!"
+         
+         notification.fireDate = Date(timeIntervalSinceNow: 0)
+         notification.soundName = UILocalNotificationDefaultSoundName
+         
+         notification.userInfo = ["title": "Title", "UUID": "12345"]
+         UIApplication.shared.scheduleLocalNotification(notification)*/
+    }
+}
+
+class LocalNotificationMethod : NSObject {
+    
+    static let notificationInstance = LocalNotificationMethod()
+    
+    let requestIdentifier = "SampleRequest" //identifier is to cancel the notification request
+    
+    internal func scheduleLocalNotification(titleOfNotification:String, subtitleOfNotification:String, messageOfNotification:String, soundOfNotification:String, dateOfNotification:String) {
         
-        notification.fireDate = Date(timeIntervalSinceNow: 0)
-        notification.soundName = UILocalNotificationDefaultSoundName
+        if #available(iOS 10.0, *) {
+            
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd hh:mm"
+            let date3 = formatter.date(from: dateOfNotification)
+            
+            let content = UNMutableNotificationContent()
+            content.body = NSString.localizedUserNotificationString(forKey: titleOfNotification, arguments: nil)
+            content.sound = soundOfNotification.count > 0 ? UNNotificationSound.init(named: UNNotificationSoundName(rawValue: soundOfNotification + ".mp3") ) : UNNotificationSound.default
+            
+            let trigger = UNCalendarNotificationTrigger.init(dateMatching: NSCalendar.current.dateComponents([.day, .month, .year, .hour, .minute], from: date3!), repeats: false)
+            
+            let request = UNNotificationRequest(identifier:requestIdentifier, content: content, trigger: trigger)
+            
+            UNUserNotificationCenter.current().add(request){(error) in
+                
+                if (error != nil) {
+                    print(error?.localizedDescription)
+                } else {
+                    print("Successfully Done")
+                }
+            }
+        } else {
+            // Fallback on earlier versions
+        }
         
-        notification.userInfo = ["title": "Title", "UUID": "12345"]
-        UIApplication.shared.scheduleLocalNotification(notification)
     }
 }

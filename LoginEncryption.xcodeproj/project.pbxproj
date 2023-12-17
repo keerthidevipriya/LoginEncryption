@@ -62,6 +62,7 @@
 		5618A1392B286A3000FC0892 /* LoginModule.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LoginModule.framework; sourceTree = "<group>"; };
 		5618A13F2B286B9E00FC0892 /* LoginComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginComposer.swift; sourceTree = "<group>"; };
 		565CED1A2B29B40D00563BD4 /* SwifyText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwifyText.swift; sourceTree = "<group>"; };
+		56C90F742B2A59E2004CE402 /* LoginEncryption.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LoginEncryption.entitlements; sourceTree = "<group>"; };
 		56F2AE7F2B232FDC00A3298E /* LoginEncryption.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginEncryption.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56F2AE822B232FDC00A3298E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56F2AE842B232FDC00A3298E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +149,7 @@
 		56F2AE812B232FDC00A3298E /* LoginEncryption */ = {
 			isa = PBXGroup;
 			children = (
+				56C90F742B2A59E2004CE402 /* LoginEncryption.entitlements */,
 				5618A13E2B286B9400FC0892 /* Composer */,
 				56F2AE822B232FDC00A3298E /* AppDelegate.swift */,
 				56F2AE842B232FDC00A3298E /* SceneDelegate.swift */,
@@ -624,6 +626,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LoginEncryption/LoginEncryption.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -656,6 +659,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LoginEncryption/LoginEncryption.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				FRAMEWORK_SEARCH_PATHS = (

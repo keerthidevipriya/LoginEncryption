@@ -11,7 +11,22 @@ import UserNotifications
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    func notifications() {
+    @available(iOS 10.0, *)
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        print("Notification tapped---")
+        let vc = LoginComposer.getInitialViewController()
+        vc.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @available(iOS 10.0, *)
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        print("Notification being triggered")
+        if notification.request.identifier == "SampleRequest" {
+            completionHandler( [.alert,.sound,.badge])
+        }
+    }
+    
+    func notifications(_ application: UIApplication) {
         let notificationCenter = UNUserNotificationCenter.current()
         notificationCenter.requestAuthorization(options: [.sound, .badge, .alert]) { s, err in
             if s {
@@ -19,11 +34,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             } else {
                 print("Authorization failed")
             }
+            DispatchQueue.main.async {
+                application.registerForRemoteNotifications()
+            }
         }
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        notifications()
+        notifications(application)
         // when app in background use the following command
         /*
          xcrun simctl push DDCD1E99-DE6B-49BC-B023-C2601166531E com.encryption.login.LoginEncryption apn.apns
@@ -48,6 +66,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         print("Remote notification received (tapped, or while app in foreground)")
+    }
+}
+
+extension AppDelegate {
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+      let token = deviceToken.reduce("") { $0 + String(format: "%02x", $1) }
+      print("token is-----\(token)")
     }
 }
 
