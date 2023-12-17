@@ -14,8 +14,10 @@ public class LoginVC: UIViewController {
     var validations: LoginValidation?
     
     enum Constant {
-        static let margin: CGFloat = 16
-        static let btnWidth: CGFloat = 64
+        static let margin: CGFloat = 48
+        static let btnHeight: CGFloat = 48
+        static let sideMargin: CGFloat = 64
+        static let bgImage = UIImage(named: "bluegradientbgImage") ?? UIImage()
     }
     enum Keys: String {
         case password
@@ -30,7 +32,7 @@ public class LoginVC: UIViewController {
     lazy var titleLbl: UILabel = {
         var lbl = UILabel()
         lbl.translatesAutoresizingMaskIntoConstraints = false
-        lbl.font = UIFont.systemFont(ofSize: 14)
+        lbl.font = UIFont.systemFont(ofSize: 24)
         return lbl
     }()
     
@@ -166,7 +168,7 @@ public class LoginVC: UIViewController {
         enableBiometricsLbl.text = "Enable Biometrics"
         titleLbl.textColor = .black
         enableBiometricsLbl.textColor = .black
-        submitBtn.backgroundColor = .blue
+        submitBtn.backgroundColor = .blue//UIColor(hex: "#2C64C6")
         clearBtn.backgroundColor = .blue
     }
     
@@ -191,11 +193,14 @@ public class LoginVC: UIViewController {
             titleLbl.centerXAnchor.constraint(equalTo: baseView.centerXAnchor),
             titleLbl.topAnchor.constraint(equalTo: baseView.topAnchor, constant: 308),
             
-            pswdTextField.centerXAnchor.constraint(equalTo: baseView.centerXAnchor),
+            pswdTextField.leftAnchor.constraint(equalTo: baseView.leftAnchor, constant: Constant.sideMargin),
+            pswdTextField.rightAnchor.constraint(equalTo: baseView.rightAnchor, constant: -Constant.sideMargin),
+            pswdTextField.heightAnchor.constraint(equalToConstant: Constant.btnHeight),
             pswdTextField.topAnchor.constraint(equalTo: titleLbl.bottomAnchor, constant: Constant.margin),
             
-            submitBtn.centerXAnchor.constraint(equalTo: baseView.centerXAnchor),
-            submitBtn.widthAnchor.constraint(equalToConstant: Constant.btnWidth),
+            submitBtn.leftAnchor.constraint(equalTo: baseView.leftAnchor, constant: Constant.sideMargin),
+            submitBtn.rightAnchor.constraint(equalTo: baseView.rightAnchor, constant: -Constant.sideMargin),
+            submitBtn.heightAnchor.constraint(equalToConstant: Constant.btnHeight),
             submitBtn.topAnchor.constraint(equalTo: pswdTextField.bottomAnchor, constant: Constant.margin),
             
             biometricSwitch.centerXAnchor.constraint(equalTo: baseView.centerXAnchor),
@@ -208,8 +213,8 @@ public class LoginVC: UIViewController {
     }
     
     func configureViewTheme() {
-        baseView.backgroundColor = .white
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = UIColor(patternImage: Constant.bgImage)
+        baseView.backgroundColor = UIColor(patternImage: Constant.bgImage)
     }
 }
 
