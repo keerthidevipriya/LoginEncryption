@@ -43,11 +43,11 @@ public class LoginVC: UIViewController {
         textField.keyboardType = UIKeyboardType.default
         textField.returnKeyType = UIReturnKeyType.done
         textField.autocorrectionType = UITextAutocorrectionType.no
-        textField.font = UIFont.systemFont(ofSize: 13)
+        textField.font = UIFont.systemFont(ofSize: 16)
         textField.borderStyle = UITextField.BorderStyle.roundedRect
         textField.clearButtonMode = UITextField.ViewMode.whileEditing
         textField.backgroundColor = .lightGray
-        textField.textColor = .gray
+        textField.textColor = .black
         textField.isSecureTextEntry = true
         textField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
         // textField.addTarget(self, action: #selector(saveDetails), for: .editingChanged)
@@ -64,7 +64,7 @@ public class LoginVC: UIViewController {
     lazy var enableBiometricsLbl: UILabel = {
         var lbl = UILabel()
         lbl.translatesAutoresizingMaskIntoConstraints = false
-        lbl.font = UIFont.systemFont(ofSize: 10)
+        lbl.font = UIFont.systemFont(ofSize: 16)
         return lbl
     }()
     
@@ -72,9 +72,9 @@ public class LoginVC: UIViewController {
         var btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.setTitle("Submit", for: .normal)
-        btn.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: 16)
         btn.addTarget(self, action: #selector(submitTapped), for: .touchUpInside)
-        btn.layer.cornerRadius = 8
+        btn.layer.cornerRadius = 16
         return btn
     }()
     
@@ -82,7 +82,7 @@ public class LoginVC: UIViewController {
         var btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.setTitle("Clear", for: .normal)
-        btn.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: 16)
         btn.addTarget(self, action: #selector(clearTapped), for: .touchUpInside)
         btn.layer.cornerRadius = 8
         return btn
@@ -121,17 +121,17 @@ public class LoginVC: UIViewController {
         //decrement the counter
         if workoutIntervalCount == 0 { //finshed intervals
             timer.invalidate()
-            //statusLabel.text = "Workout complete"
+            //clearBtn.text = "Sent Notification"
             guard let bgTask = backgroundTask else { return }
             UIApplication.shared.endBackgroundTask(bgTask)
         } else {
             workout = !workout
             if !workout {
-                //statusLabel.text = String(format:"Interval %i Rest",workoutIntervalCount)
+                //clearBtn.text = String(format:"Interval %i Rest",workoutIntervalCount)
                 workoutIntervalCount -= 1
             }else{
                 workoutIntervalCount = 0
-                //statusLabel.text = String(format:"Interval %i Work Out",workoutIntervalCount)
+                //clearBtn.text = String(format:"Interval %i Work Out",workoutIntervalCount)
             }
             
         }
@@ -176,7 +176,6 @@ public class LoginVC: UIViewController {
         titleLbl.text = "Please enter your password"
         enableBiometricsLbl.text = "Enable Biometrics"
         titleLbl.textColor = .black
-        enableBiometricsLbl.textColor = .black
         submitBtn.backgroundColor = .blue//UIColor(hex: "#2C64C6")
         clearBtn.backgroundColor = .blue
     }
@@ -224,6 +223,7 @@ public class LoginVC: UIViewController {
     }
     
     func configureViewTheme() {
+        pswdTextField.layer.cornerRadius = 16
         pswdTextField.borderStyle = .line
         pswdTextField.backgroundColor = .lightGray
         titleLbl.textColor = .white
@@ -259,9 +259,9 @@ extension LoginVC {
             pswdTextField.text = validations?.getDecryptData(data)
         }
         biometricSwitch.isOn = defaults.bool(forKey: Keys.biometric.rawValue)
-        /*if biometricSwitch.isOn {
+        if biometricSwitch.isOn {
             self.submitTapped()
-        }*/
+        }
     }
     
     @objc func saveDetails() {
