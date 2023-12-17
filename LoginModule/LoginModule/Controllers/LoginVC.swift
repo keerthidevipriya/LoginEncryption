@@ -40,6 +40,7 @@ public class LoginVC: UIViewController {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "Enter Password"
+        textField.clipsToBounds = true
         textField.keyboardType = UIKeyboardType.default
         textField.returnKeyType = UIReturnKeyType.done
         textField.autocorrectionType = UITextAutocorrectionType.no
@@ -223,9 +224,7 @@ public class LoginVC: UIViewController {
     }
     
     func configureViewTheme() {
-        pswdTextField.layer.cornerRadius = 16
-        pswdTextField.borderStyle = .line
-        pswdTextField.backgroundColor = .lightGray
+        pswdTextField.layer.cornerRadius = 12
         titleLbl.textColor = .white
         enableBiometricsLbl.textColor = .white
         //self.view.backgroundColor = UIColor(patternImage: imageView.image ?? UIImage())
