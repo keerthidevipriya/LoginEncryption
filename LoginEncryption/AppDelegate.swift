@@ -35,6 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("Authorization failed")
             }
             DispatchQueue.main.async {
+                application.registerUserNotificationSettings(UIUserNotificationSettings(types: [.alert, .sound, .badge], categories: []))
                 application.registerForRemoteNotifications()
             }
         }

@@ -214,3 +214,53 @@ func displayToastMessage(_ message : String) {
         })
     })
 }
+/*
+ /*
+  let notif = LocalNotificationMethod()
+  notif.scheduleLocalNotification(
+      titleOfNotification: "Hello",
+      subtitleOfNotification: "Lets go to Login page",
+      messageOfNotification: "Please tap here",
+      soundOfNotification: String(),
+      dateOfNotification: "2023-12-17 04:26"
+  )
+  */
+ */
+
+
+class LocalNotificationMethod : NSObject {
+    
+    static let notificationInstance = LocalNotificationMethod()
+    
+    let requestIdentifier = "SampleRequest" //identifier is to cancel the notification request
+    
+    internal func scheduleLocalNotification(titleOfNotification:String, subtitleOfNotification:String, messageOfNotification:String, soundOfNotification:String, dateOfNotification:String) {
+        
+        if #available(iOS 10.0, *) {
+            
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd hh:mm"
+            let date3 = formatter.date(from: dateOfNotification)
+            
+            let content = UNMutableNotificationContent()
+            content.body = NSString.localizedUserNotificationString(forKey: titleOfNotification, arguments: nil)
+            content.sound = soundOfNotification.count > 0 ? UNNotificationSound.init(named: UNNotificationSoundName(rawValue: soundOfNotification + ".mp3") ) : UNNotificationSound.default
+            
+            let trigger = UNCalendarNotificationTrigger.init(dateMatching: NSCalendar.current.dateComponents([.day, .month, .year, .hour, .minute], from: date3!), repeats: false)
+            
+            let request = UNNotificationRequest(identifier: requestIdentifier, content: content, trigger: trigger)
+            
+            UNUserNotificationCenter.current().add(request){(error) in
+                
+                if let err = error {
+                    print(err.localizedDescription)
+                } else {
+                    print("Successfully Done")
+                }
+            }
+        } else {
+            // Fallback on earlier versions
+        }
+        
+    }
+}

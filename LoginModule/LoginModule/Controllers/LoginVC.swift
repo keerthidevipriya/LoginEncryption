@@ -79,6 +79,53 @@ public class LoginVC: UIViewController {
         return btn
     }()
     
+    var timer = Timer()
+    let timeInterval: TimeInterval = 5.0
+    var workout = false
+    var workoutIntervalCount = 5
+    var seconds: TimeInterval = 0.0
+    var backgroundTask: UIBackgroundTaskIdentifier?
+    
+    func startTimer() {
+        if !timer.isValid { //prevent more than one timer on the thread
+            backgroundTask = UIApplication.shared.beginBackgroundTask(expirationHandler: nil)
+            timer = Timer.scheduledTimer(
+                timeInterval: timeInterval,
+                target: self,
+                selector: #selector(timerDidEnd),
+                userInfo: nil,
+                repeats: true)
+            
+        }
+    }
+    
+    @objc func timerDidEnd(timer: Timer) {
+        //decrement the counter
+        if workoutIntervalCount == 0 { //finshed intervals
+            timer.invalidate()
+            //statusLabel.text = "Workout complete"
+            guard let bgTask = backgroundTask else { return }
+            UIApplication.shared.endBackgroundTask(bgTask)
+        } else {
+            workout = !workout
+            if !workout {
+                //statusLabel.text = String(format:"Interval %i Rest",workoutIntervalCount)
+                workoutIntervalCount -= 1
+            }else{
+                //statusLabel.text = String(format:"Interval %i Work Out",workoutIntervalCount)
+                
+            }
+            
+        }
+        let localNotification = UILocalNotification()
+        localNotification.alertBody = "Tap me"//statusLabel.text!
+        localNotification.timeZone = NSTimeZone.default
+        localNotification.applicationIconBadgeNumber = workoutIntervalCount
+        
+        //set the notification
+        UIApplication.shared.presentLocalNotificationNow(localNotification)
+    }
+    
     public static func makeViewController(validations: LoginValidation?) -> LoginVC {
         let vc = LoginVC()
         vc.validations = validations
@@ -260,59 +307,6 @@ extension LoginVC {
     }
     
     func handleNotification() {
-        let notif = LocalNotificationMethod()
-        notif.scheduleLocalNotification(
-            titleOfNotification: "Hello",
-            subtitleOfNotification: "Lets go to Login page",
-            messageOfNotification: "Please tap here",
-            soundOfNotification: String(),
-            dateOfNotification: "2023-12-17 03:57"
-        )
-        /*let notification = UILocalNotification()
-         notification.alertAction = "Hello"
-         notification.alertBody = "Welcome to the app!"
-         
-         notification.fireDate = Date(timeIntervalSinceNow: 0)
-         notification.soundName = UILocalNotificationDefaultSoundName
-         
-         notification.userInfo = ["title": "Title", "UUID": "12345"]
-         UIApplication.shared.scheduleLocalNotification(notification)*/
-    }
-}
-
-class LocalNotificationMethod : NSObject {
-    
-    static let notificationInstance = LocalNotificationMethod()
-    
-    let requestIdentifier = "SampleRequest" //identifier is to cancel the notification request
-    
-    internal func scheduleLocalNotification(titleOfNotification:String, subtitleOfNotification:String, messageOfNotification:String, soundOfNotification:String, dateOfNotification:String) {
-        
-        if #available(iOS 10.0, *) {
-            
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy-MM-dd hh:mm"
-            let date3 = formatter.date(from: dateOfNotification)
-            
-            let content = UNMutableNotificationContent()
-            content.body = NSString.localizedUserNotificationString(forKey: titleOfNotification, arguments: nil)
-            content.sound = soundOfNotification.count > 0 ? UNNotificationSound.init(named: UNNotificationSoundName(rawValue: soundOfNotification + ".mp3") ) : UNNotificationSound.default
-            
-            let trigger = UNCalendarNotificationTrigger.init(dateMatching: NSCalendar.current.dateComponents([.day, .month, .year, .hour, .minute], from: date3!), repeats: false)
-            
-            let request = UNNotificationRequest(identifier:requestIdentifier, content: content, trigger: trigger)
-            
-            UNUserNotificationCenter.current().add(request){(error) in
-                
-                if (error != nil) {
-                    print(error?.localizedDescription)
-                } else {
-                    print("Successfully Done")
-                }
-            }
-        } else {
-            // Fallback on earlier versions
-        }
-        
+        startTimer()
     }
 }
