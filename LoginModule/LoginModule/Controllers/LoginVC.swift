@@ -88,6 +88,15 @@ public class LoginVC: UIViewController {
         return btn
     }()
     
+    lazy var imageView : UIImageView = {
+        var imageView = UIImageView(frame: view.bounds)
+        imageView.contentMode = .scaleToFill
+        imageView.clipsToBounds = true
+        imageView.image = Constant.bgImage
+        imageView.center = view.center
+        return imageView
+    }()
+    
     var timer = Timer()
     let timeInterval: TimeInterval = 5.0
     var workout = false
@@ -173,12 +182,14 @@ public class LoginVC: UIViewController {
     }
     
     func configureView() {
+        
         baseView.addSubview(titleLbl)
         baseView.addSubview(pswdTextField)
         baseView.addSubview(submitBtn)
         baseView.addSubview(biometricSwitch)
         baseView.addSubview(enableBiometricsLbl)
         //baseView.addSubview(clearBtn)
+        view.addSubview(imageView)
         view.addSubview(baseView)
     }
     
@@ -213,8 +224,12 @@ public class LoginVC: UIViewController {
     }
     
     func configureViewTheme() {
-        self.view.backgroundColor = UIColor(patternImage: Constant.bgImage)
-        baseView.backgroundColor = UIColor(patternImage: Constant.bgImage)
+        pswdTextField.borderStyle = .line
+        pswdTextField.backgroundColor = .lightGray
+        titleLbl.textColor = .white
+        enableBiometricsLbl.textColor = .white
+        //self.view.backgroundColor = UIColor(patternImage: imageView.image ?? UIImage())
+        //baseView.backgroundColor = UIColor(patternImage: Constant.bgImage)
     }
 }
 
