@@ -8,6 +8,11 @@
 import UIKit
 import LocalAuthentication
 
+enum Keys: String {
+    case password
+    case biometric
+}
+
 public class LoginVC: UIViewController {
     var defaults = UserDefaults.standard
     var encryptedPswd: String = String()
@@ -18,10 +23,6 @@ public class LoginVC: UIViewController {
         static let btnHeight: CGFloat = 48
         static let sideMargin: CGFloat = 64
         static let bgImage = UIImage(named: "bluegradientbgImage") ?? UIImage()
-    }
-    enum Keys: String {
-        case password
-        case biometric
     }
     lazy var baseView: UIView = {
         let view = UIView()
@@ -305,6 +306,7 @@ extension LoginVC {
     }
     
     func showAuthfailedAlert() {
+        defaults.set(false, forKey: Keys.biometric.rawValue)
         biometricSwitch.isOn = false
         let ac = UIAlertController(title: "Authentication failed", message: "Please try again.", preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
@@ -312,6 +314,7 @@ extension LoginVC {
     }
     
     func showNoBiometricAvailable() {
+        defaults.set(false, forKey: Keys.biometric.rawValue)
         biometricSwitch.isOn = false
         let ac = UIAlertController(
             title: "Biometry unavailable",
@@ -325,6 +328,8 @@ extension LoginVC {
     @objc func switchValueDidChange(sender:UISwitch!) {
         if(sender.isOn) {
             self.addBiometricAuthentication()
+        } else {
+            defaults.set(false, forKey: Keys.biometric.rawValue)
         }
     }
     

@@ -8,6 +8,7 @@
 import UIKit
 
 class HomeVC: UIViewController {
+    var defaults = UserDefaults.standard
     var encryptedPswd: String = String()
     var validations: LoginValidation?
     
@@ -15,6 +16,8 @@ class HomeVC: UIViewController {
         static let margin: CGFloat = 48
         static let iconMargin: CGFloat = 72
         static let lockIcon = UIImage(named: "lockIcon")
+        static let verified_yes = UIImage(named: "verify_yes")
+        static let verified_no = UIImage(named: "verify_no")
         static let bgImage = UIImage(named: "bluegradientbgImage") ?? UIImage()
     }
     
@@ -84,6 +87,8 @@ class HomeVC: UIViewController {
     }
     
     func setUpData() {
+        let isVerified = defaults.bool(forKey: Keys.biometric.rawValue)
+        lockImageView.image = isVerified ? Constant.verified_yes : Constant.verified_no
         titleLbl.text = "My details are as follows"
         detailsLbl.text = validations?.getDecryptData(self.encryptedPswd)
         // Utility.decryptData(self.encryptedPswd)
