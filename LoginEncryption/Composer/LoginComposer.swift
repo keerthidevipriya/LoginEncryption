@@ -34,6 +34,7 @@ class LoginValidations: LoginModule.LoginValidation {
         var error: Unmanaged<CFError>?
         guard let privateKey = SecKeyCreateRandomKey(attributes as CFDictionary, &error) else { return }
         guard let publicKey = SecKeyCopyPublicKey(privateKey) else { return }
+        displayToastMessage("Keypair generated")
         let algorithm: SecKeyAlgorithm = .rsaEncryptionOAEPSHA512
         
         guard SecKeyIsAlgorithmSupported(publicKey, .encrypt, algorithm) else { return }
@@ -96,8 +97,9 @@ class LoginValidations: LoginModule.LoginValidation {
             return String()
                            //                                 throw error!.takeRetainedValue() as Error
         }
-        displayToastMessage("Password is secured by two layer safety by encryption")
-
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            displayToastMessage("Password is secured by two layer safety by encryption")
+        }
         guard SecKeyIsAlgorithmSupported(privateKey, .decrypt, algorithm) else {
             return String()
             // throw &error

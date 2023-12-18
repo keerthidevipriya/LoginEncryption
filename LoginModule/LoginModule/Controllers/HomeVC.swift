@@ -13,6 +13,7 @@ class HomeVC: UIViewController {
     var validations: LoginValidation?
     
     enum Constant {
+        static let verifiedStatusMargin: CGFloat = 24
         static let margin: CGFloat = 48
         static let iconMargin: CGFloat = 72
         static let lockIcon = UIImage(named: "lockIcon")
@@ -25,6 +26,24 @@ class HomeVC: UIViewController {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
+    }()
+    
+    lazy var biometricVerifyLbl: UILabel = {
+        var lbl = UILabel()
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        lbl.textColor = .black
+        lbl.font = UIFont.systemFont(ofSize: 16)
+        return lbl
+    }()
+    
+    lazy var biometricStatusImgView: UIImageView = {
+        var imageView = UIImageView()
+        imageView.contentMode = .scaleToFill
+        imageView.clipsToBounds = true
+        imageView.image = Constant.lockIcon
+        imageView.center = view.center
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
     }()
     
     lazy var lockImageView: UIImageView = {
@@ -88,7 +107,8 @@ class HomeVC: UIViewController {
     
     func setUpData() {
         let isVerified = defaults.bool(forKey: Keys.biometric.rawValue)
-        lockImageView.image = isVerified ? Constant.verified_yes : Constant.verified_no
+        biometricStatusImgView.image = isVerified ? Constant.verified_yes : Constant.verified_no
+        biometricVerifyLbl.text = "Your biometric details are "
         titleLbl.text = "My details are as follows"
         detailsLbl.text = validations?.getDecryptData(self.encryptedPswd)
         // Utility.decryptData(self.encryptedPswd)
@@ -98,6 +118,8 @@ class HomeVC: UIViewController {
         baseView.addSubview(lockImageView)
         baseView.addSubview(titleLbl)
         baseView.addSubview(detailsLbl)
+        baseView.addSubview(biometricVerifyLbl)
+        baseView.addSubview(biometricStatusImgView)
         view.addSubview(bgImageView)
         view.addSubview(baseView)
     }
@@ -119,12 +141,22 @@ class HomeVC: UIViewController {
             titleLbl.topAnchor.constraint(equalTo: lockImageView.bottomAnchor, constant: Constant.margin),
             
             detailsLbl.centerXAnchor.constraint(equalTo: baseView.centerXAnchor),
-            detailsLbl.topAnchor.constraint(equalTo: titleLbl.bottomAnchor, constant: Constant.margin)
+            detailsLbl.topAnchor.constraint(equalTo: titleLbl.bottomAnchor, constant: Constant.margin),
+            
+            biometricVerifyLbl.topAnchor.constraint(equalTo: detailsLbl.bottomAnchor, constant: Constant.margin),
+            biometricVerifyLbl.centerXAnchor.constraint(equalTo: baseView.centerXAnchor, constant: Constant.margin),
+            biometricVerifyLbl.rightAnchor.constraint(equalTo: biometricStatusImgView.leftAnchor, constant: Constant.margin),
+            
+            biometricStatusImgView.topAnchor.constraint(equalTo: detailsLbl.bottomAnchor, constant: Constant.margin),
+            biometricStatusImgView.rightAnchor.constraint(equalTo: baseView.rightAnchor, constant: -Constant.margin),
+            biometricStatusImgView.widthAnchor.constraint(equalToConstant: Constant.verifiedStatusMargin),
+            biometricStatusImgView.heightAnchor.constraint(equalToConstant: Constant.verifiedStatusMargin)
         ])
     }
     
     func configureViewTheme() {
         titleLbl.textColor = .white
         detailsLbl.textColor = .white
+        biometricVerifyLbl.textColor = .white
     }
 }
