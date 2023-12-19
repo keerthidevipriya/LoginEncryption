@@ -135,7 +135,7 @@ class HomeVC: UIViewController {
             lockImageView.centerXAnchor.constraint(equalTo: baseView.centerXAnchor),
             lockImageView.widthAnchor.constraint(equalToConstant: Constant.iconMargin),
             lockImageView.heightAnchor.constraint(equalToConstant: Constant.iconMargin),
-            lockImageView.topAnchor.constraint(equalTo: baseView.topAnchor, constant: 370),
+            lockImageView.topAnchor.constraint(equalTo: baseView.topAnchor, constant: 320),
             
             titleLbl.centerXAnchor.constraint(equalTo: baseView.centerXAnchor),
             titleLbl.topAnchor.constraint(equalTo: lockImageView.bottomAnchor, constant: Constant.margin),
